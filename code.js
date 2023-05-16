@@ -169,6 +169,7 @@ const calcData = () => {
     graphOp3 = Math.round(valueOfOptions3*4);
     
     setCellValue("message-text", calculatorMessage.value);
+    console.log(calculatorMessage.value);
 
     option.series = [
         {
