@@ -30,6 +30,7 @@ const offerSizeCustom = document.getElementById("offer-size-custom");
 const customOfferSize = document.getElementById("custom-offer-size");
 const vestingPeriod = document.getElementById("vesting-period");
 const cliffPeriod = document.getElementById("cliff-period");
+const calculatorMessage = document.getElementById("calculator-message");
 
 let typeValue = "ESOP";
 let poolSizeValue = 10;
@@ -166,6 +167,8 @@ const calcData = () => {
     graphOp1 = Math.round(valueOfOptions1*4);
     graphOp2 = Math.round(valueOfOptions2*4);
     graphOp3 = Math.round(valueOfOptions3*4);
+    
+    setCellValue("message-text", calculatorMessage.value);
 
     option.series = [
         {
@@ -282,6 +285,10 @@ vestingPeriod.onchange = function () {
 cliffPeriod.onchange = function () {
     calcData();
 };
+
+calculatorMessage.addEventListener("input", () => {
+    calcData();
+}
 
 allowOnlyNumbers(shares);
 allowOnlyNumbers(annualGrossSalary);
