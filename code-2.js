@@ -289,7 +289,7 @@ cliffPeriod.onchange = function () {
 
 calculatorMessage.addEventListener("input", () => {
     calcData();
-}
+});
 
 allowOnlyNumbers(shares);
 allowOnlyNumbers(annualGrossSalary);
