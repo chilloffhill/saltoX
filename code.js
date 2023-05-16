@@ -146,6 +146,22 @@ const calcData = () => {
     setCellValue("total-annual-comp-op-1", '€' + Math.round(totalAnnualComp1));
     setCellValue("total-annual-comp-op-2", '€' + Math.round(totalAnnualComp2));
     setCellValue("total-annual-comp-op-3", '€' + Math.round(totalAnnualComp3));
+    
+    setCellValue("t-2-gross-salary-op-1", '€' + Math.round(locAnnualGrossSalary*0.9));
+    setCellValue("t-2-gross-salary-op-2", '€' + Math.round(locAnnualGrossSalary));
+    setCellValue("t-2-gross-salary-op-3", '€' + Math.round(locAnnualGrossSalary*1.1));
+
+    setCellValue("t-2-company-options-op-1", Math.round(companyOptions1));
+    setCellValue("t-2-company-options-op-2", Math.round(companyOptions2));
+    setCellValue("t-2-company-options-op-3", Math.round(companyOptions3));
+
+    setCellValue("t-2-value-of-options-op-1", Math.round(valueOfOptions1));
+    setCellValue("t-2-value-of-options-op-2", Math.round(valueOfOptions2));
+    setCellValue("t-2-value-of-options-op-3", Math.round(valueOfOptions3));
+
+    setCellValue("t-2-total-annual-comp-op-1", '€' + Math.round(totalAnnualComp1));
+    setCellValue("t-2-total-annual-comp-op-2", '€' + Math.round(totalAnnualComp2));
+    setCellValue("t-2-total-annual-comp-op-3", '€' + Math.round(totalAnnualComp3));
 
     graphOp1 = Math.round(valueOfOptions1*4);
     graphOp2 = Math.round(valueOfOptions2*4);
