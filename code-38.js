@@ -170,7 +170,8 @@ You can read more about equity compensation pros and cons at saltox.co/employee-
     if (valuation.value === 'custom') {
     	locValuation = customValuation.value;
     	customValuation.style.display = 'block';
-	locValuation = valuation.value === '' ? 1500000 : valuation.value*1;
+	locValuation = customValuation.value === '' ? 1500000 : customValuation.value*1;
+	    
     } else{
 	customValuation.style.display = 'none';
     	customValuation.value = '';
