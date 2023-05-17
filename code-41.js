@@ -54,6 +54,8 @@ const cliffPeriod = document.getElementById("cliff-period");
 const calculatorMessage = document.getElementById("calculator-message");
 
 const customValuation = document.getElementById("custom-valuation");
+const dropdownValuationLabel = document.getElementById("dropdown-valuation-label");
+const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label");
 
 calculatorMessage.placeholder = placeholder= `Hey! 
 
@@ -177,8 +179,20 @@ You can read more about equity compensation pros and cons at saltox.co/employee-
     	customValuation.value = '';
 	locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
     }
-    console.log(locValuation)
-
+    console.log(locValuation);
+	
+    if (valuation.value === ''){
+	dropdownValuationLabel.style.color = '#90909D'; 
+    }else{
+	dropdownValuationLabel.style.color = '#1F1F2D'; 
+    }
+	
+    if (jobLevel.value === ''){
+	dropdownJobJevelJabel.style.color = '#90909D'; 
+    }else{
+	dropdownValuationLabel.style.color = '#1F1F2D'; 
+    }
+	
     locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
 
     const numberOfShares = locShares * locCustomPoolSize/100;
