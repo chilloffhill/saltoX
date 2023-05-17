@@ -206,7 +206,7 @@ const calcData = () => {
     cmsCulc42.value = shareCapitalOp2.toFixed(2) + '%';
     cmsCulc43.value = shareCapitalOp3.toFixed(2) + '%';
     
-    cmsCulcM.value = calculatorMessage.value;
+    cmsCulcM.value = loccalCulatorMessage;
     
     graphOp1 = Math.round(valueOfOptions1*4);
     graphOp2 = Math.round(valueOfOptions2*4);
@@ -216,9 +216,7 @@ const calcData = () => {
     cmsGraphOp2.value = graphOp2;
     cmsGraphOp3.value = graphOp3;
     
-    console.log(cmsGraphOp3.value);
-    
-    setCellValue("message-text", calculatorMessage.value);
+    setCellValue("message-text", loccalCulatorMessage);
 
     option.series = [
         {
