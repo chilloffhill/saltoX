@@ -7,6 +7,10 @@ function allowOnlyNumbers(inputElement) {
         const formattedInput = Number(val).toLocaleString();
 	      console.log(formattedInput);
         inputElement.value = formattedInput;
+	    
+    	if (val === '' || val === '0') {
+          inputElement.value = '';
+        }
     });
 }
 
