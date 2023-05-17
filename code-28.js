@@ -15,10 +15,10 @@ function allowOnlyNumbers(inputElement) {
 }
 
 function allowOnlyTwoNumbers(input) {
-    inputElement.addEventListener('input', () => {
-        input = input.replace(/[^0-9.]/g, '');
+    input.addEventListener('input', () => {
+        input = input.value.replace(/[^0-9.]/g, '');
 	    
-	const parts = input.split('.');
+	const parts = input.value.split('.');
 	    
 	const integerPart = parts[0].slice(0, 2);
 	const decimalPart = parts[1] ? parts[1].slice(0, 2) : '';
@@ -28,10 +28,10 @@ function allowOnlyTwoNumbers(input) {
 	result += '.' + decimalPart;
 	}
 	    
-        inputElement.value = result;
+        input.value = result;
 	    
     	if (result === '' || result === '0') {
-          inputElement.value = '';
+          input.value = '';
         }
     });
 }
