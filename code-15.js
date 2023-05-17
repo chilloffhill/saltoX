@@ -142,10 +142,6 @@ const calcData = () => {
     const shareCapitalOp1 = ( companyOptions1 / locShares ) * 100;
     const shareCapitalOp2 = ( companyOptions2 / locShares ) * 100;
     const shareCapitalOp3 = ( companyOptions3 / locShares ) * 100;
-    
-    console.log(shareCapitalOp1);
-    console.log(shareCapitalOp2);
-    console.log(shareCapitalOp3);
 
     setCellValue("gross-salary-op-1", '€' + Math.round(locAnnualGrossSalary*0.9));
     setCellValue("gross-salary-op-2", '€' + Math.round(locAnnualGrossSalary));
@@ -159,9 +155,9 @@ const calcData = () => {
     setCellValue("value-of-options-op-2", Math.round(valueOfOptions2));
     setCellValue("value-of-options-op-3", Math.round(valueOfOptions3));
     
-    setCellValue("share-capital-op-1", shareCapitalOp1.toFixed(2));
-    setCellValue("share-capital-op-2", shareCapitalOp2.toFixed(2));
-    setCellValue("share-capital-op-3", shareCapitalOp3.toFixed(2));
+    setCellValue("share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
+    setCellValue("share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
+    setCellValue("share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
     
     setCellValue("t-2-gross-salary-op-1", '€' + Math.round(locAnnualGrossSalary*0.9));
     setCellValue("t-2-gross-salary-op-2", '€' + Math.round(locAnnualGrossSalary));
@@ -175,9 +171,9 @@ const calcData = () => {
     setCellValue("t-2-value-of-options-op-2", Math.round(valueOfOptions2));
     setCellValue("t-2-value-of-options-op-3", Math.round(valueOfOptions3));
 
-    setCellValue("t-2-total-annual-comp-op-1", '€' + Math.round(totalAnnualComp1));
-    setCellValue("t-2-total-annual-comp-op-2", '€' + Math.round(totalAnnualComp2));
-    setCellValue("t-2-total-annual-comp-op-3", '€' + Math.round(totalAnnualComp3));
+    setCellValue("t-2-share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
+    setCellValue("t-2-share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
+    setCellValue("t-2-share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
     
     cmsCulc11.value = '€' + Math.round(locAnnualGrossSalary*0.9);
     cmsCulc12.value = '€' + Math.round(locAnnualGrossSalary);
