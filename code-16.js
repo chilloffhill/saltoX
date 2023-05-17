@@ -187,9 +187,9 @@ const calcData = () => {
     cmsCulc32.value = Math.round(valueOfOptions2)
     cmsCulc33.value = Math.round(valueOfOptions3)
     
-    cmsCulc41.value = '€' + Math.round(totalAnnualComp1);
-    cmsCulc42.value = '€' + Math.round(locAnnualGrossSalary)
-    cmsCulc43.value = '€' + Math.round(locAnnualGrossSalary*1.1)
+    cmsCulc41.value = shareCapitalOp1.toFixed(2) + '%';
+    cmsCulc42.value = shareCapitalOp2.toFixed(2) + '%';
+    cmsCulc43.value = shareCapitalOp3.toFixed(2) + '%';
     
     cmsCulcM.value = calculatorMessage.value;
     
