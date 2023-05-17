@@ -129,6 +129,13 @@ const calcData = () => {
     const locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
     const locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
     const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value*1;
+    const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey! 
+
+    We are thrilled to offer you a position in our team!
+
+    We would like to offer you a choice between three exciting compensation packages (salary and equity). The options have a 4 year vesting schedule with a 1 year cliff.
+
+    You can read more about equity compensation pros and cons at saltox.co/employee-equity` : calculatorMessage.value;
 
     locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
 
