@@ -151,9 +151,9 @@ const calcData = () => {
     setCellValue("company-options-op-2", Math.round(companyOptions2));
     setCellValue("company-options-op-3", Math.round(companyOptions3));
 
-    setCellValue("value-of-options-op-1", Math.round(valueOfOptions1));
-    setCellValue("value-of-options-op-2", Math.round(valueOfOptions2));
-    setCellValue("value-of-options-op-3", Math.round(valueOfOptions3));
+    setCellValue("value-of-options-op-1", '€' + Math.round(valueOfOptions1));
+    setCellValue("value-of-options-op-2", '€' + Math.round(valueOfOptions2));
+    setCellValue("value-of-options-op-3", '€' + Math.round(valueOfOptions3));
     
     setCellValue("share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
     setCellValue("share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
@@ -167,9 +167,9 @@ const calcData = () => {
     setCellValue("t-2-company-options-op-2", Math.round(companyOptions2));
     setCellValue("t-2-company-options-op-3", Math.round(companyOptions3));
 
-    setCellValue("t-2-value-of-options-op-1", Math.round(valueOfOptions1));
-    setCellValue("t-2-value-of-options-op-2", Math.round(valueOfOptions2));
-    setCellValue("t-2-value-of-options-op-3", Math.round(valueOfOptions3));
+    setCellValue("t-2-value-of-options-op-1", '€' + Math.round(valueOfOptions1));
+    setCellValue("t-2-value-of-options-op-2", '€' + Math.round(valueOfOptions2));
+    setCellValue("t-2-value-of-options-op-3", '€' + Math.round(valueOfOptions3));
 
     setCellValue("t-2-share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
     setCellValue("t-2-share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
@@ -183,9 +183,9 @@ const calcData = () => {
     cmsCulc22.value = Math.round(companyOptions2)
     cmsCulc23.value = Math.round(companyOptions3)
     
-    cmsCulc31.value = Math.round(valueOfOptions1)
-    cmsCulc32.value = Math.round(valueOfOptions2)
-    cmsCulc33.value = Math.round(valueOfOptions3)
+    cmsCulc31.value = '€' + Math.round(valueOfOptions1)
+    cmsCulc32.value = '€' + Math.round(valueOfOptions2)
+    cmsCulc33.value = '€' + Math.round(valueOfOptions3)
     
     cmsCulc41.value = shareCapitalOp1.toFixed(2) + '%';
     cmsCulc42.value = shareCapitalOp2.toFixed(2) + '%';
