@@ -13,28 +13,24 @@ function allowOnlyNumbers(inputElement) {
     });
 }
 
-function allowOnlyTwoNumbers(inputElement) {
+function formatNumberInput(inputElement) {
     inputElement.addEventListener('input', () => {
         let val = inputElement.value.replace(/[^0-9.]/g, '');
         
-        const integerPart = val.split('.')[0];
-        if (integerPart.length > 2) {
-            integerPart = integerPart.slice(0, 2);
+        const decimalIndex = val.indexOf('.');
+        if (decimalIndex !== -1) {
+            const integerPart = val.slice(0, decimalIndex);
+            const limitedIntegerPart = integerPart.slice(0, 2);
+            
+            const decimalPart = val.slice(decimalIndex + 1);
+            const limitedDecimalPart = decimalPart.slice(0, 2);
+            
+            val = `${limitedIntegerPart}.${limitedDecimalPart}`;
+        } else {
+            val = val.slice(0, 2);
         }
         
-        let decimalPart = val.split('.')[1];
-        if (decimalPart && decimalPart.length > 2) {
-            decimalPart = decimalPart.slice(0, 2);
-        }
-        
-        val = (decimalPart) ? `${integerPart}.${decimalPart}` : integerPart;
-        
-        const formattedInput = Number(val).toLocaleString();
-        inputElement.value = formattedInput;
-        
-        if (val === '' || val === '0') {
-            inputElement.value = '';
-        }
+        inputElement.value = val;
     });
 }
 
@@ -325,5 +321,5 @@ calculatorMessage.addEventListener("input", () => {
 
 allowOnlyNumbers(shares);
 allowOnlyNumbers(annualGrossSalary);
-allowOnlyTwoNumbers(customPoolSize);
+formatNumberInput(customPoolSize);
 calcData();
