@@ -53,6 +53,8 @@ const vestingPeriod = document.getElementById("vesting-period");
 const cliffPeriod = document.getElementById("cliff-period");
 const calculatorMessage = document.getElementById("calculator-message");
 
+const customValuation = document.getElementById("custom-valuation");
+
 calculatorMessage.placeholder = placeholder= `Hey! 
 
 We are thrilled to offer you a position in our team!
@@ -154,10 +156,16 @@ option = {
 const calcData = () => {
     let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
     const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
-    const locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
+    let locValuation;
     const locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
     const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
-    const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey! 
+    const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!
+    
+    if (valuation.value === 'custom') {
+    	locValuation = customValuation.value;
+    } else{
+    	locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
+    }
 
 We are thrilled to offer you a position in our team!
 
@@ -298,6 +306,14 @@ shares.addEventListener("input", () => {
 valuation.onchange = function () {
     calcData();
 };
+
+customValuation.addEventListener("input", () => {
+    if (!isNaN(customValuation.value.replace(/[^0-9.]/g, '')*1)) {
+	if ( customValuation.value !== 0 ){
+		calcData();
+	}
+    }
+});
 
 jobLevel.onchange = function () {
     calcData();
