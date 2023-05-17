@@ -116,9 +116,9 @@ option = {
 
     ],
     color: [
-        '#3FC05B',
-        '#593EFF',
-        '#6705E3'
+        '#FFBFB8',
+        '#EDB2FA',
+        '#D9D3FD'
     ]
 }
 
