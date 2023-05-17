@@ -5,7 +5,6 @@ function allowOnlyNumbers(inputElement) {
     inputElement.addEventListener('input', () => {
         const val = inputElement.value.replace(/[^0-9.]/g, '').toLocaleString();
         const formattedInput = Number(val).toLocaleString();
-	      console.log(formattedInput);
         inputElement.value = formattedInput;
 	    
     	if (val === '' || val === '0') {
@@ -14,27 +13,31 @@ function allowOnlyNumbers(inputElement) {
     });
 }
 
-function allowOnlyTwoNumbers(input) {
-    input.addEventListener('input', () => {
-        input = input.value.replace(/[^0-9.]/g, '');
-	    
-	const parts = input.value.split('.');
-	    
-	const integerPart = parts[0].slice(0, 2);
-	const decimalPart = parts[1] ? parts[1].slice(0, 2) : '';
-	    
-	let result = integerPart;
-	if (decimalPart !== '') {
-	result += '.' + decimalPart;
-	}
-	    
-        input.value = result;
-	    
-    	if (result === '' || result === '0') {
-          input.value = '';
+function allowOnlyTwoNumbers(inputElement) {
+    inputElement.addEventListener('input', () => {
+        let val = inputElement.value.replace(/[^0-9.]/g, '');
+        
+        const integerPart = val.split('.')[0];
+        if (integerPart.length > 2) {
+            integerPart = integerPart.slice(0, 2);
+        }
+        
+        let decimalPart = val.split('.')[1];
+        if (decimalPart && decimalPart.length > 2) {
+            decimalPart = decimalPart.slice(0, 2);
+        }
+        
+        val = (decimalPart) ? `${integerPart}.${decimalPart}` : integerPart;
+        
+        const formattedInput = Number(val).toLocaleString();
+        inputElement.value = formattedInput;
+        
+        if (val === '' || val === '0') {
+            inputElement.value = '';
         }
     });
 }
+
 
 const setCellValue = (cell, value) =>{
     document.getElementById(cell).textContent = value;
