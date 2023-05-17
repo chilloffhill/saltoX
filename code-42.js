@@ -190,7 +190,7 @@ You can read more about equity compensation pros and cons at saltox.co/employee-
     if (jobLevel.value === ''){
 	dropdownJobJevelJabel.style.color = '#90909D'; 
     }else{
-	dropdownValuationLabel.style.color = '#1F1F2D'; 
+	dropdownJobJevelJabel.style.color = '#1F1F2D'; 
     }
 	
     locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
