@@ -3,7 +3,7 @@ var myChart2 = echarts.init(document.getElementById('lineGraph2'));
 
 function allowOnlyNumbers(inputElement) {
     inputElement.addEventListener('input', () => {
-        const val = inputElement.value.replace(/[^0-9.]/g, '').toLocaleString();
+        const val = inputElement.value.replace(/[^0-9]/g, '').toLocaleString();
         const formattedInput = Number(val).toLocaleString();
         inputElement.value = formattedInput;
 	    
