@@ -63,7 +63,7 @@ We are thrilled to offer you a position in our team!
 
 We would like to offer you a choice between three exciting compensation packages (salary and equity). The options have a 4 year vesting schedule with a 1 year cliff.
 
-You can read more about equity compensation pros and cons at saltox.co/employee-equity`
+You can read more about equity compensation pros and cons at`
 
 let typeValue = "ESOP";
 
@@ -169,7 +169,7 @@ We are thrilled to offer you a position in our team!
 
 We would like to offer you a choice between three exciting compensation packages (salary and equity). The options have a 4 year vesting schedule with a 1 year cliff.
 
-You can read more about equity compensation pros and cons at saltox.co/employee-equity` : calculatorMessage.value;
+You can read more about equity compensation pros and cons at` : calculatorMessage.value;
 	
     curMessage = loccalCulatorMessage;
 	
