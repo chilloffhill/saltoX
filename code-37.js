@@ -170,12 +170,12 @@ You can read more about equity compensation pros and cons at saltox.co/employee-
     if (valuation.value === 'custom') {
     	locValuation = customValuation.value;
     	customValuation.style.display = 'block';
+	locValuation = valuation.value === '' ? 1500000 : valuation.value*1;
     } else{
-    	locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
 	customValuation.style.display = 'none';
     	customValuation.value = '';
+	locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
     }
-    
     console.log(locValuation)
 
     locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
@@ -347,4 +347,5 @@ calculatorMessage.addEventListener("input", () => {
 allowOnlyNumbers(shares);
 allowOnlyNumbers(annualGrossSalary);
 formatNumberInput(customPoolSize);
+allowOnlyNumbers(customValuation);
 calcData();
