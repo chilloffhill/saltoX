@@ -163,7 +163,7 @@ const calcData = () => {
     const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
     let locValuation;
     const locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
-    const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
+    const locAnnualGrossSalary = annualGrossSalary.value === '' ? 6000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
     const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!
 
 We are thrilled to offer you a position in our team!
