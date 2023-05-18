@@ -116,6 +116,7 @@ option = {
         containLabel: true
     },
     toolbox: {
+	show: false,
         feature: {
             saveAsImage: {}
         }
