@@ -287,6 +287,7 @@ if ( jobLevel.value === 'senior-3' ){
     const divideEquityValueIntoOp1 = valueOfOptions1/ ( vestingPeriod * 1 );
     const divideEquityValueIntoOp2 = valueOfOptions2/ ( vestingPeriod * 1 );
     const divideEquityValueIntoOp3 = valueOfOptions3/ ( vestingPeriod * 1 );
+console.log('divideEquityValueIntoOp1: ' + divideEquityValueIntoOp1)
 	
     const totalCompensationYEOp1 = grossSalaryOp1 + divideEquityValueIntoOp1;
     const totalCompensationYEOp2 = grossSalaryOp2 + divideEquityValueIntoOp2;
