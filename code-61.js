@@ -271,14 +271,16 @@ if ( jobLevel.value === 'senior-3' ){
 	
     const AnnualSalaryLoss1 = ( AnnualSalaryLossVal1 / locValuation ) *100;
     const AnnualSalaryLoss3 = - ( AnnualSalaryLossVal3 / locValuation ) *100;
+	console.log(AnnualSalaryLoss1);
+	console.log(AnnualSalaryLoss3);
 
     const totalAnnualComp2 = locAnnualGrossSalary + ( ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4 )
     const totalAnnualComp1 = locAnnualGrossSalary*0.9 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
     const totalAnnualComp3 = locAnnualGrossSalary*1.1 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*1.1 ) * 4 ) / 4 )
     
-    const shareCapitalOp1 = locJobLevel + AnnualSalaryLoss1.toFixed(4);
+    const shareCapitalOp1 = locJobLevel + AnnualSalaryLoss1;
     const shareCapitalOp2 = locJobLevel;
-    const shareCapitalOp3 = locJobLevel + AnnualSalaryLoss3.toFixed(4);
+    const shareCapitalOp3 = locJobLevel + AnnualSalaryLoss3;
 	
     const valueOfOptions1 = shareCapitalOp1 * locValuation;
     const valueOfOptions2 = shareCapitalOp2 * locValuation;
