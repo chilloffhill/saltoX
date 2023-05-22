@@ -176,47 +176,47 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
     
     curMessage = loccalCulatorMessage;
 	
-if ( locJobLevel === 'junior-1' ){
+if ( jobLevel.value === 'junior-1' ){
     	locJobLevel = 60;
     	maxJobLevel = 0.80;
 }
 	
-if ( locJobLevel === 'mid-level-1' ){
+if ( jobLevel.value === 'mid-level-1' ){
 	locJobLevel = 70;
 	maxJobLevel = 1;
 }
 	
-if ( locJobLevel === 'senior-1' ){
+if ( jobLevel.value === 'senior-1' ){
 	locJobLevel = 85;
 	maxJobLevel = 1.2;
 }
 	
-if ( locJobLevel === 'junior-2' ){
+if ( jobLevel.value === 'junior-2' ){
     	locJobLevel = 40;
     	maxJobLevel = 0.70;
 }
 	
-if ( locJobLevel === 'mid-level-2' ){
+if ( jobLevel.value === 'mid-level-2' ){
 	locJobLevel = 50;
 	maxJobLevel = 0.90;
 }
 	
-if ( locJobLevel === 'senior-2' ){
+if ( jobLevel.value === 'senior-2' ){
 	locJobLevel = 65;
 	maxJobLevel = 1.10;
 }
 	
-if ( locJobLevel === 'junior-3' ){
+if ( jobLevel.value === 'junior-3' ){
     	locJobLevel = 40;
     	maxJobLevel = 0.65;
 }
 	
-if ( locJobLevel === 'mid-level-3' ){
+if ( jobLevel.value === 'mid-level-3' ){
 	locJobLevel = 50;
 	maxJobLevel = 0.85;
 }
 	
-if ( locJobLevel === 'senior-3' ){
+if ( jobLevel.value === 'senior-3' ){
 	locJobLevel = 65;
 	maxJobLevel = 1.05;
 }
