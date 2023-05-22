@@ -293,17 +293,17 @@ if ( jobLevel.value === 'senior-3' ){
     const totalAnnualComp1 = locAnnualGrossSalary*0.9 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
     const totalAnnualComp3 = locAnnualGrossSalary*1.1 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*1.1 ) * 4 ) / 4 )
     
-    const shareCapitalOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) > 0 ) ? ( locJobLevel + AnnualSalaryLoss1 ) : locJobLevel;
+    const shareCapitalOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? ( locJobLevel + AnnualSalaryLoss1 ) : locJobLevel;
     const shareCapitalOp2 = locJobLevel;
-    const shareCapitalOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) > 0 ) ? ( locJobLevel + AnnualSalaryLoss3 ) : locJobLevel;
+    const shareCapitalOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? ( locJobLevel + AnnualSalaryLoss3 ) : locJobLevel;
 	
     const valueOfOptions1 = ( shareCapitalOp1 * locValuation ) / 100;
     const valueOfOptions2 = ( shareCapitalOp2 * locValuation ) / 100;
     const valueOfOptions3 = ( shareCapitalOp3 * locValuation ) / 100;
 	
-    const divideEquityValueIntoOp1 = valueOfOptions1/ ( vestingPeriod.value * 1 );
-    const divideEquityValueIntoOp2 = valueOfOptions2/ ( vestingPeriod.value * 1 );
-    const divideEquityValueIntoOp3 = valueOfOptions3/ ( vestingPeriod.value * 1 );
+    const divideEquityValueIntoOp1 = valueOfOptions1 / ( vestingPeriod.value * 1 );
+    const divideEquityValueIntoOp2 = valueOfOptions2 / ( vestingPeriod.value * 1 );
+    const divideEquityValueIntoOp3 = valueOfOptions3 / ( vestingPeriod.value * 1 );
 	
     const totalCompensationYEOp1 = grossSalaryOp1 + divideEquityValueIntoOp1;
     const totalCompensationYEOp2 = grossSalaryOp2 + divideEquityValueIntoOp2;
