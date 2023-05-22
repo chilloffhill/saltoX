@@ -291,10 +291,13 @@ if ( jobLevel.value === 'senior-3' ){
     const totalCompensationYEOp1 = grossSalaryOp1 + divideEquityValueIntoOp1;
     const totalCompensationYEOp2 = grossSalaryOp2 + divideEquityValueIntoOp2;
     const totalCompensationYEOp3 = grossSalaryOp3 + divideEquityValueIntoOp3;
+console.log('totalCompensationYEOp1: ' + totalCompensationYEOp1)
 	
     const totalCompensationWEOp1 = grossSalaryOp1 + valueOfOptions1;
     const totalCompensationWEOp2 = grossSalaryOp2 + valueOfOptions2;
     const totalCompensationWEOp3 = grossSalaryOp3 + valueOfOptions3;
+console.log('totalCompensationWEOp1: ' + totalCompensationWEOp1)
+console.log('totalCompensationWEOp3: ' + totalCompensationWEOp3)
 
     setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
     setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
