@@ -283,6 +283,18 @@ if ( jobLevel.value === 'senior-3' ){
     const valueOfOptions1 = ( shareCapitalOp1 * locValuation ) / 100;
     const valueOfOptions2 = ( shareCapitalOp2 * locValuation ) / 100;
     const valueOfOptions3 = ( shareCapitalOp3 * locValuation ) / 100;
+	
+    const divideEquityValueIntoOp1 = valueOfOptions1/vestingPeriod;
+    const divideEquityValueIntoOp2 = valueOfOptions2/vestingPeriod;
+    const divideEquityValueIntoOp3 = valueOfOptions3/vestingPeriod;
+	
+    const totalCompensationYEOp1 = grossSalaryOp1 + divideEquityValueIntoOp1;
+    const totalCompensationYEOp2 = grossSalaryOp2 + divideEquityValueIntoOp2;
+    const totalCompensationYEOp3 = grossSalaryOp3 + divideEquityValueIntoOp3;
+	
+    const totalCompensationWEOp1 = grossSalaryOp1 + valueOfOptions1;
+    const totalCompensationWEOp2 = grossSalaryOp2 + valueOfOptions2;
+    const totalCompensationWEOp3 = grossSalaryOp3 + valueOfOptions3;
 
     setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
     setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
@@ -303,6 +315,14 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
     setCellValue("share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
     setCellValue("share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
+	
+    setCellValue("total-compensation-y-e-op-1", '€' + Math.round(totalCompensationYEOp1));
+    setCellValue("total-compensation-y-e-op-2", '€' + Math.round(totalCompensationYEOp2));
+    setCellValue("total-compensation-y-e-op-3", '€' + Math.round(totalCompensationYEOp3));
+	
+    setCellValue("total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
+    setCellValue("total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
+    setCellValue("total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
     
     setCellValue("t-2-gross-salary-op-1", '€' + Math.round(locAnnualGrossSalary*0.9));
     setCellValue("t-2-gross-salary-op-2", '€' + Math.round(locAnnualGrossSalary));
