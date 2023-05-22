@@ -116,6 +116,9 @@ const cmsValueOfOptionsOp1 = document.getElementById("cms-value-of-options-op-1"
 const cmsValueOfOptionsOp2 = document.getElementById("cms-value-of-options-op-2");
 const cmsValueOfOptionsOp3 = document.getElementById("cms-value-of-options-op-3");
 
+const calcTableLowError = document.getElementById("calc-table-low-error");
+calcTableLowError.style.display = "none";
+
 option = {
     title: {
         text: ''
@@ -333,7 +336,8 @@ if ( jobLevel.value === 'senior-3' ){
     valueOfOptions1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? valueOfOptions1 : valueOfOptions2;
     valueOfOptions3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? valueOfOptions3 : valueOfOptions2;
 	
-
+// set table
+	
     setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
     setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
     setCellValue("gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
@@ -433,6 +437,12 @@ if ( jobLevel.value === 'senior-3' ){
     graphVal1 = Math.round(valueOfOptions1)
     graphVal2 = Math.round(valueOfOptions2)
     graphVal3 = Math.round(valueOfOptions3)
+	
+    if( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ){
+	calcTableLowError.style.display = "none";
+    }else{
+	calcTableLowError.style.display = "block";
+    }
 
     option.series = [
         {
