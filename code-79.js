@@ -267,17 +267,17 @@ if ( jobLevel.value === 'senior-3' ){
     const numberOfShares = locShares * locCustomPoolSize/100;
     const totalValueOfOption = ( locValuation / locShares ) * numberOfShares;
 	
-    const grossSalaryOp1 = locAnnualGrossSalary*0.9;
-    const grossSalaryOp2 = locAnnualGrossSalary;
-    const grossSalaryOp3 = locAnnualGrossSalary*1.1;
+    let grossSalaryOp1 = locAnnualGrossSalary*0.9;
+    let grossSalaryOp2 = locAnnualGrossSalary;
+    let grossSalaryOp3 = locAnnualGrossSalary*1.1;
 	
-    const grossSalaryMonthlyOp1 = grossSalaryOp1/12;
-    const grossSalaryMonthlyOp2 = grossSalaryOp2/12;
-    const grossSalaryMonthlyOp3 = grossSalaryOp3/12;
+    let grossSalaryMonthlyOp1 = grossSalaryOp1/12;
+    let grossSalaryMonthlyOp2 = grossSalaryOp2/12;
+    let grossSalaryMonthlyOp3 = grossSalaryOp3/12;
 
-    const companyOptions2 = ( locAnnualGrossSalary * locJobLevel / 100 ) / ( totalValueOfOption / numberOfShares )
-    const companyOptions3 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*1.1 ) * 4 ) / ( totalValueOfOption / numberOfShares );
-    const companyOptions1 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*0.9 ) * 4 ) / ( totalValueOfOption / numberOfShares );
+    let companyOptions2 = ( locAnnualGrossSalary * locJobLevel / 100 ) / ( totalValueOfOption / numberOfShares )
+    let companyOptions3 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*1.1 ) * 4 ) / ( totalValueOfOption / numberOfShares );
+    let companyOptions1 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*0.9 ) * 4 ) / ( totalValueOfOption / numberOfShares );
 	
     const EquityValueBasedOnSalary = ( locAnnualGrossSalary * locJobLevel ) / 100;
     const EquityBasedOnSalary = EquityValueBasedOnSalary / locValuation;
@@ -297,21 +297,42 @@ if ( jobLevel.value === 'senior-3' ){
     const shareCapitalOp2 = locJobLevel;
     const shareCapitalOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? ( locJobLevel + AnnualSalaryLoss3 ) : locJobLevel;
 	
-    const valueOfOptions1 = ( shareCapitalOp1 * locValuation ) / 100;
-    const valueOfOptions2 = ( shareCapitalOp2 * locValuation ) / 100;
-    const valueOfOptions3 = ( shareCapitalOp3 * locValuation ) / 100;
+    let valueOfOptions1 = ( shareCapitalOp1 * locValuation ) / 100;
+    let valueOfOptions2 = ( shareCapitalOp2 * locValuation ) / 100;
+    let valueOfOptions3 = ( shareCapitalOp3 * locValuation ) / 100;
 	
     const divideEquityValueIntoOp1 = valueOfOptions1 / ( vestingPeriod.value * 1 );
     const divideEquityValueIntoOp2 = valueOfOptions2 / ( vestingPeriod.value * 1 );
     const divideEquityValueIntoOp3 = valueOfOptions3 / ( vestingPeriod.value * 1 );
 	
-    const totalCompensationYEOp1 = grossSalaryOp1 + divideEquityValueIntoOp1;
-    const totalCompensationYEOp2 = grossSalaryOp2 + divideEquityValueIntoOp2;
-    const totalCompensationYEOp3 = grossSalaryOp3 + divideEquityValueIntoOp3;
+    let totalCompensationYEOp1 = grossSalaryOp1 + divideEquityValueIntoOp1;
+    let totalCompensationYEOp2 = grossSalaryOp2 + divideEquityValueIntoOp2;
+    let totalCompensationYEOp3 = grossSalaryOp3 + divideEquityValueIntoOp3;
 	
-    const totalCompensationWEOp1 = grossSalaryOp1 + valueOfOptions1;
-    const totalCompensationWEOp2 = grossSalaryOp2 + valueOfOptions2;
-    const totalCompensationWEOp3 = grossSalaryOp3 + valueOfOptions3;
+    let totalCompensationWEOp1 = grossSalaryOp1 + valueOfOptions1;
+    let totalCompensationWEOp2 = grossSalaryOp2 + valueOfOptions2;
+    let totalCompensationWEOp3 = grossSalaryOp3 + valueOfOptions3;
+	
+// check
+
+    grossSalaryOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? grossSalaryOp1 : grossSalaryOp2;
+    grossSalaryOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? grossSalaryOp3 : grossSalaryOp2;
+	
+    grossSalaryMonthlyOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? grossSalaryMonthlyOp1 : grossSalaryMonthlyOp2;
+    grossSalaryMonthlyOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? grossSalaryMonthlyOp3 : grossSalaryMonthlyOp2;
+	
+    companyOptions1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? companyOptions1 : companyOptions2;
+    companyOptions3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? companyOptions3 : companyOptions2;
+	
+    totalCompensationYEOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? totalCompensationYEOp1 : totalCompensationYEOp2;
+    totalCompensationYEOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? totalCompensationYEOp3 : totalCompensationYEOp2;
+	
+    totalCompensationWEOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? totalCompensationWEOp1 : totalCompensationWEOp2;
+    totalCompensationWEOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? totalCompensationWEOp3 : totalCompensationWEOp2;
+	
+    valueOfOptions1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? valueOfOptions1 : valueOfOptions2;
+    valueOfOptions3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? valueOfOptions3 : valueOfOptions2;
+	
 
     setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
     setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
