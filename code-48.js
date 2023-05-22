@@ -162,7 +162,8 @@ const calcData = () => {
     let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
     const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
     let locValuation;
-    const locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
+    let locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
+    let maxJobLevel = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
     const locAnnualGrossSalary = annualGrossSalary.value === '' ? 6000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
     const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!
 
@@ -172,7 +173,53 @@ We would like to offer you a choice between three exciting compensation packages
 
 You can read more about equity compensation pros and cons at` : calculatorMessage.value;
 	
+    
     curMessage = loccalCulatorMessage;
+	
+if ( locJobLevel === 'junior-1' ){
+    	locJobLevel = 60;
+    	maxJobLevel = 0.80;
+}
+	
+if ( locJobLevel === 'mid-level-1' ){
+	locJobLevel = 70;
+	maxJobLevel = 1;
+}
+	
+if ( locJobLevel === 'senior-1' ){
+	locJobLevel = 85;
+	maxJobLevel = 1.2;
+}
+	
+if ( locJobLevel === 'junior-2' ){
+    	locJobLevel = 40;
+    	maxJobLevel = 0.70;
+}
+	
+if ( locJobLevel === 'mid-level-2' ){
+	locJobLevel = 50;
+	maxJobLevel = 0.90;
+}
+	
+if ( locJobLevel === 'senior-2' ){
+	locJobLevel = 65;
+	maxJobLevel = 1.10;
+}
+	
+if ( locJobLevel === 'junior-3' ){
+    	locJobLevel = 40;
+    	maxJobLevel = 0.65;
+}
+	
+if ( locJobLevel === 'mid-level-3' ){
+	locJobLevel = 50;
+	maxJobLevel = 0.85;
+}
+	
+if ( locJobLevel === 'senior-3' ){
+	locJobLevel = 65;
+	maxJobLevel = 1.05;
+}
 	
     if (valuation.value === 'custom') {
     	locValuation = customValuation.value;
@@ -202,26 +249,48 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 
     const numberOfShares = locShares * locCustomPoolSize/100;
     const totalValueOfOption = ( locValuation / locShares ) * numberOfShares;
+	
+    const grossSalaryOp1 = locAnnualGrossSalary*0.9;
+    const grossSalaryOp2 = locAnnualGrossSalary;
+    const grossSalaryOp3 = locAnnualGrossSalary*1.1;
+	
+    const grossSalaryMonthlyOp1 = grossSalaryOp1/12;
+    const grossSalaryMonthlyOp2 = grossSalaryOp2/12;
+    const grossSalaryMonthlyOp3 = grossSalaryOp3/12;
 
     const companyOptions2 = ( locAnnualGrossSalary * locJobLevel / 100 ) / ( totalValueOfOption / numberOfShares )
     const companyOptions3 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*1.1 ) * 4 ) / ( totalValueOfOption / numberOfShares );
     const companyOptions1 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*0.9 ) * 4 ) / ( totalValueOfOption / numberOfShares );
+	
+    const EquityValueBasedOnSalary = ( locAnnualGrossSalary * locJobLevel ) / 100;
+    const EquityBasedOnSalary = EquityValueBasedOnSalary / locValuation;
+    locJobLevel = ( locJobLevel / 100 ) > EquityBasedOnSalary ? locJobLevel / 100 : EquityBasedOnSalary;
+	
+    const AnnualSalaryLossVal1 = grossSalaryOp2 - grossSalaryOp1;
+    const AnnualSalaryLossVal3 = grossSalaryOp3 - grossSalaryOp2;
+	
+    const AnnualSalaryLoss1 = AnnualSalaryLossVal1 / locValuation;
+    const AnnualSalaryLoss3 = AnnualSalaryLossVal3 / locValuation;
 
     const totalAnnualComp2 = locAnnualGrossSalary + ( ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4 )
     const totalAnnualComp1 = locAnnualGrossSalary*0.9 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
     const totalAnnualComp3 = locAnnualGrossSalary*1.1 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*1.1 ) * 4 ) / 4 )
-
-    const valueOfOptions1 = totalAnnualComp2 - locAnnualGrossSalary*0.9;
-    const valueOfOptions2 = ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4
-    const valueOfOptions3 = totalAnnualComp2 - locAnnualGrossSalary*1.1;
     
-    const shareCapitalOp1 = ( companyOptions1 / locShares ) * 100;
-    const shareCapitalOp2 = ( companyOptions2 / locShares ) * 100;
-    const shareCapitalOp3 = ( companyOptions3 / locShares ) * 100;
+    const shareCapitalOp1 = locJobLevel + AnnualSalaryLoss1;
+    const shareCapitalOp2 = locJobLevel;
+    const shareCapitalOp3 = locJobLevel + AnnualSalaryLoss3;
+	
+    const valueOfOptions1 = shareCapitalOp1 * locValuation;
+    const valueOfOptions2 = shareCapitalOp2 * locValuation;
+    const valueOfOptions3 = shareCapitalOp3 * locValuation;
 
-    setCellValue("gross-salary-op-1", '€' + Math.round(locAnnualGrossSalary*0.9));
-    setCellValue("gross-salary-op-2", '€' + Math.round(locAnnualGrossSalary));
-    setCellValue("gross-salary-op-3", '€' + Math.round(locAnnualGrossSalary*1.1));
+    setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
+    setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
+    setCellValue("gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
+	
+    setCellValue("gross-salary-monthly-op-1", '€' + Math.round(grossSalaryMonthlyOp1));
+    setCellValue("gross-salary-monthly-op-2", '€' + Math.round(grossSalaryMonthlyOp2));
+    setCellValue("gross-salary-monthly-op-3", '€' + Math.round(grossSalaryMonthlyOp3));
 
     setCellValue("company-options-op-1", Math.round(companyOptions1));
     setCellValue("company-options-op-2", Math.round(companyOptions2));
