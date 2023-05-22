@@ -408,25 +408,29 @@ if ( jobLevel.value === 'senior-3' ){
     cmsValueOfOptionsOp3.value = '€' + Math.round(valueOfOptions3)
     
     setCellValue("message-text", loccalCulatorMessage);
+	
+    graphVal1 = Math.round(valueOfOptions1*4)
+    graphVal2 = Math.round(valueOfOptions2*4)
+    graphVal3 = Math.round(valueOfOptions3*4)
 
     option.series = [
         {
             name: '#3',
             type: 'line',
             stack: 'Total',
-            data: [valueOfOptions3*4, valueOfOptions3*4*3, valueOfOptions3*4*5, valueOfOptions3*4*10]
+            data: [graphVal3, graphVal3*3, graphVal3*5, graphVal3*10]
         },
         {
             name: '#2',
             type: 'line',
             stack: 'Total',
-            data: [valueOfOptions2*4, valueOfOptions2*4*3, valueOfOptions2*4*5, valueOfOptions2*4*10]
+            data: [graphVal2, graphVal2*3, graphVal2*5, graphVal2*10]
         },
         {
             name: '#1',
             type: 'line',
             stack: 'Total',
-            data: [valueOfOptions1*4, valueOfOptions1*4*3, valueOfOptions1*4*5, valueOfOptions1*4*10]
+            data: [graphVal1, graphVal1*3, graphVal1*5, graphVal1*10]
         }
     ]
     myChart.setOption(option, true);
