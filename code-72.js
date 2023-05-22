@@ -82,6 +82,40 @@ let graphOp1;
 let graphOp2;
 let graphOp3;
 
+const cmsGrossSalaryOp1 = document.getElementById("cms-gross-salary-op-1");
+const cmsGrossSalaryOp2 = document.getElementById("cms-gross-salary-op-2");
+const cmsGrossSalaryOp3 = document.getElementById("cms-gross-salary-op-3");
+
+const cmsGrossSalaryMonthlyOp1 = document.getElementById("cms-gross-salary-monthly-op-1");
+const cmsGrossSalaryMonthlyOp2 = document.getElementById("cms-gross-salary-monthly-op-2");
+const cmsGrossSalaryMonthlyOp3 = document.getElementById("cms-gross-salary-monthly-op-3");
+
+const cmsCompanyOptionsOp1 = document.getElementById("cms-company-options-op-1");
+const cmsCompanyOptionsOp2 = document.getElementById("cms-company-options-op-2");
+const cmsCompanyOptionsOp3 = document.getElementById("cms-company-options-op-3");
+
+const cmsShareCapitalOp1 = document.getElementById("cms-share-capital-op-1");
+const cmsShareCapitalOp2 = document.getElementById("cms-share-capital-op-2");
+const cmsShareCapitalOp3 = document.getElementById("cms-share-capital-op-3");
+
+const cmsCulcM = document.getElementById("cms-culc-m");
+
+const cmsGraphOp1 = document.getElementById("cms-graph-op-1");
+const cmsGraphOp4 = document.getElementById("cms-graph-op-3");
+const cmsGraphOp3 = document.getElementById("cms-graph-op-2");
+
+const cmsTotalCompensationYEOp1 = document.getElementById("cms-total-compensation-y-e-op-1");
+const cmsTotalCompensationYEOp2 = document.getElementById("cms-total-compensation-y-e-op-2");
+const cmsTotalCompensationYEOp3 = document.getElementById("cms-total-compensation-y-e-op-3");
+
+const cmsTotalCompensationWEOp1 = document.getElementById("cms-total-compensation-w-e-op-1");
+const cmsTotalCompensationWEOp2 = document.getElementById("cms-total-compensation-w-e-op-2");
+const cmsTotalCompensationWEOp3 = document.getElementById("cms-total-compensation-w-e-op-3");
+
+const cmsValueOfOptionsOp1 = document.getElementById("cms-value-of-options-op-1");
+const cmsValueOfOptionsOp2 = document.getElementById("cms-value-of-options-op-2");
+const cmsValueOfOptionsOp3 = document.getElementById("cms-value-of-options-op-3");
+
 const cmsCulc11 = document.getElementById("cms-culc-1-1");
 const cmsCulc12 = document.getElementById("cms-culc-1-2");
 const cmsCulc13 = document.getElementById("cms-culc-1-3");
@@ -353,32 +387,42 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
     setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
     setCellValue("t-2-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
+	
+    // cms
+	
+    cmsGrossSalaryOp1.value = '€' + Math.round(grossSalaryOp1)
+    cmsGrossSalaryOp2.value = '€' + Math.round(grossSalaryOp2)
+    cmsGrossSalaryOp3.value = '€' + Math.round(grossSalaryOp3)
     
-    cmsCulc11.value = '€' + Math.round(locAnnualGrossSalary*0.9);
-    cmsCulc12.value = '€' + Math.round(locAnnualGrossSalary);
-    cmsCulc13.value = '€' + Math.round(locAnnualGrossSalary*1.1);
+    cmsGrossSalaryMonthlyOp1.value = '€' + Math.round(grossSalaryMonthlyOp1)
+    cmsGrossSalaryMonthlyOp2.value = '€' + Math.round(grossSalaryMonthlyOp2)
+    cmsGrossSalaryMonthlyOp3.value = '€' + Math.round(grossSalaryMonthlyOp3)
     
-    cmsCulc21.value = Math.round(companyOptions1)
-    cmsCulc22.value = Math.round(companyOptions2)
-    cmsCulc23.value = Math.round(companyOptions3)
+    cmsCompanyOptionsOp1.value = Math.round(companyOptions1)
+    cmsCompanyOptionsOp2.value = Math.round(companyOptions2)
+    cmsCompanyOptionsOp3.value = Math.round(companyOptions3)
     
-    cmsCulc31.value = '€' + Math.round(valueOfOptions1)
-    cmsCulc32.value = '€' + Math.round(valueOfOptions2)
-    cmsCulc33.value = '€' + Math.round(valueOfOptions3)
-    
-    cmsCulc41.value = shareCapitalOp1.toFixed(2) + '%';
-    cmsCulc42.value = shareCapitalOp2.toFixed(2) + '%';
-    cmsCulc43.value = shareCapitalOp3.toFixed(2) + '%';
+    cmsShareCapitalOp1.value = shareCapitalOp1.toFixed(2) + '%'
+    cmsShareCapitalOp2.value = shareCapitalOp2.toFixed(2) + '%'
+    cmsShareCapitalOp3.value = shareCapitalOp3.toFixed(2) + '%'
     
     cmsCulcM.value = loccalCulatorMessage;
     
-    graphOp1 = Math.round(valueOfOptions1*4);
-    graphOp2 = Math.round(valueOfOptions2*4);
-    graphOp3 = Math.round(valueOfOptions3*4);
+    cmsGraphOp1.value = Math.round(valueOfOptions1*4)
+    cmsGraphOp4.value = Math.round(valueOfOptions2*4)
+    cmsGraphOp3.value = Math.round(valueOfOptions3*4)
     
-    cmsGraphOp1.value = graphOp1;
-    cmsGraphOp2.value = graphOp2;
-    cmsGraphOp3.value = graphOp3;
+    cmsTotalCompensationYEOp1.value = '€' + Math.round(totalCompensationYEOp1)
+    cmsTotalCompensationYEOp2.value = '€' + Math.round(totalCompensationYEOp2)
+    cmsTotalCompensationYEOp3.value = '€' + Math.round(totalCompensationYEOp3)
+    
+    cmsTotalCompensationWEOp1.value = '€' + Math.round(totalCompensationWEOp1)
+    cmsTotalCompensationWEOp2.value = '€' + Math.round(totalCompensationWEOp2)
+    cmsTotalCompensationWEOp3.value = '€' + Math.round(totalCompensationWEOp3)
+    
+    cmsValueOfOptionsOp1.value = '€' + Math.round(valueOfOptions1)
+    cmsValueOfOptionsOp2.value = '€' + Math.round(valueOfOptions2)
+    cmsValueOfOptionsOp3.value = '€' + Math.round(valueOfOptions3)
     
     setCellValue("message-text", loccalCulatorMessage);
 
