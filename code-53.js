@@ -265,7 +265,7 @@ if ( jobLevel.value === 'senior-3' ){
     console.log('locJobLevel before: ' + locJobLevel)
     const EquityValueBasedOnSalary = ( locAnnualGrossSalary * locJobLevel ) / 100;
     const EquityBasedOnSalary = EquityValueBasedOnSalary / locValuation;
-    locJobLevel = ( locJobLevel / 100 ) < EquityBasedOnSalary ? ( locJobLevel / 100 ) : EquityBasedOnSalary;
+    locJobLevel = ( locJobLevel / 100 ) < EquityBasedOnSalary ? locJobLevel : EquityBasedOnSalary;
     console.log('locJobLevel: ' + locJobLevel)
 	
     const AnnualSalaryLossVal1 = grossSalaryOp2 - grossSalaryOp1;
