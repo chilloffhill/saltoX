@@ -262,9 +262,10 @@ if ( jobLevel.value === 'senior-3' ){
     const companyOptions3 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*1.1 ) * 4 ) / ( totalValueOfOption / numberOfShares );
     const companyOptions1 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*0.9 ) * 4 ) / ( totalValueOfOption / numberOfShares );
 	
+    console.log('locJobLevel before: ' + locJobLevel)
     const EquityValueBasedOnSalary = ( locAnnualGrossSalary * locJobLevel ) / 100;
     const EquityBasedOnSalary = EquityValueBasedOnSalary / locValuation;
-    locJobLevel = ( locJobLevel / 100 ) < EquityBasedOnSalary ? locJobLevel / 100 : EquityBasedOnSalary;
+    locJobLevel = ( locJobLevel / 100 ) < EquityBasedOnSalary ? ( locJobLevel / 100 ) : EquityBasedOnSalary;
     console.log('locJobLevel: ' + locJobLevel)
 	
     const AnnualSalaryLossVal1 = grossSalaryOp2 - grossSalaryOp1;
