@@ -391,9 +391,9 @@ if ( jobLevel.value === 'senior-3' ){
     
     cmsCulcM.value = loccalCulatorMessage;
     
-    cmsGraphOp1.value = Math.round(valueOfOptions1*4)
-    cmsGraphOp4.value = Math.round(valueOfOptions2*4)
-    cmsGraphOp3.value = Math.round(valueOfOptions3*4)
+    cmsGraphOp1.value = Math.round(valueOfOptions1)
+    cmsGraphOp4.value = Math.round(valueOfOptions2)
+    cmsGraphOp3.value = Math.round(valueOfOptions3)
     
     cmsTotalCompensationYEOp1.value = '€' + Math.round(totalCompensationYEOp1)
     cmsTotalCompensationYEOp2.value = '€' + Math.round(totalCompensationYEOp2)
