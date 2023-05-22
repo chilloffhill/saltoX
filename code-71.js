@@ -324,9 +324,15 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
     setCellValue("total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
     
-    setCellValue("t-2-gross-salary-op-1", '€' + Math.round(locAnnualGrossSalary*0.9));
-    setCellValue("t-2-gross-salary-op-2", '€' + Math.round(locAnnualGrossSalary));
-    setCellValue("t-2-gross-salary-op-3", '€' + Math.round(locAnnualGrossSalary*1.1));
+    // preview
+
+    setCellValue("t-2-gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
+    setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
+    setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
+	
+    setCellValue("t-2-gross-salary-monthly-op-1", '€' + Math.round(grossSalaryMonthlyOp1));
+    setCellValue("t-2-gross-salary-monthly-op-2", '€' + Math.round(grossSalaryMonthlyOp2));
+    setCellValue("t-2-gross-salary-monthly-op-3", '€' + Math.round(grossSalaryMonthlyOp3));
 
     setCellValue("t-2-company-options-op-1", Math.round(companyOptions1));
     setCellValue("t-2-company-options-op-2", Math.round(companyOptions2));
@@ -335,10 +341,18 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("t-2-value-of-options-op-1", '€' + Math.round(valueOfOptions1));
     setCellValue("t-2-value-of-options-op-2", '€' + Math.round(valueOfOptions2));
     setCellValue("t-2-value-of-options-op-3", '€' + Math.round(valueOfOptions3));
-
+    
     setCellValue("t-2-share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
     setCellValue("t-2-share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
     setCellValue("t-2-share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
+	
+    setCellValue("t-2-total-compensation-y-e-op-1", '€' + Math.round(totalCompensationYEOp1));
+    setCellValue("t-2-total-compensation-y-e-op-2", '€' + Math.round(totalCompensationYEOp2));
+    setCellValue("t-2-total-compensation-y-e-op-3", '€' + Math.round(totalCompensationYEOp3));
+	
+    setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
+    setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
+    setCellValue("t-2-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
     
     cmsCulc11.value = '€' + Math.round(locAnnualGrossSalary*0.9);
     cmsCulc12.value = '€' + Math.round(locAnnualGrossSalary);
