@@ -117,7 +117,9 @@ const cmsValueOfOptionsOp2 = document.getElementById("cms-value-of-options-op-2"
 const cmsValueOfOptionsOp3 = document.getElementById("cms-value-of-options-op-3");
 
 const calcTableLowError = document.getElementById("calc-table-low-error");
+
 calcTableLowError.style.display = "none";
+calcTableLowError.style.opacity = "0";
 
 option = {
     title: {
@@ -440,8 +442,10 @@ if ( jobLevel.value === 'senior-3' ){
 	
     if( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ){
 	calcTableLowError.style.display = "none";
+	calcTableLowError.style.opacity = "0";
     }else{
 	calcTableLowError.style.display = "block";
+	calcTableLowError.style.opacity = "1";
     }
 
     option.series = [
