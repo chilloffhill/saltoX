@@ -116,23 +116,6 @@ const cmsValueOfOptionsOp1 = document.getElementById("cms-value-of-options-op-1"
 const cmsValueOfOptionsOp2 = document.getElementById("cms-value-of-options-op-2");
 const cmsValueOfOptionsOp3 = document.getElementById("cms-value-of-options-op-3");
 
-const cmsCulc11 = document.getElementById("cms-culc-1-1");
-const cmsCulc12 = document.getElementById("cms-culc-1-2");
-const cmsCulc13 = document.getElementById("cms-culc-1-3");
-const cmsCulc21 = document.getElementById("cms-culc-2-1");
-const cmsCulc22 = document.getElementById("cms-culc-2-2");
-const cmsCulc23 = document.getElementById("cms-culc-2-3");
-const cmsCulc31 = document.getElementById("cms-culc-3-1");
-const cmsCulc32 = document.getElementById("cms-culc-3-2");
-const cmsCulc33 = document.getElementById("cms-culc-3-3");
-const cmsCulc41 = document.getElementById("cms-culc-4-1");
-const cmsCulc42 = document.getElementById("cms-culc-4-2");
-const cmsCulc43 = document.getElementById("cms-culc-4-3");
-const cmsCulcM = document.getElementById("cms-culc-m");
-const cmsGraphOp1 = document.getElementById("cms-graph-op-1");
-const cmsGraphOp2 = document.getElementById("cms-graph-op-2");
-const cmsGraphOp3 = document.getElementById("cms-graph-op-3");
-
 option = {
     title: {
         text: ''
