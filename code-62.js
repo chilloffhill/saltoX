@@ -271,8 +271,6 @@ if ( jobLevel.value === 'senior-3' ){
 	
     const AnnualSalaryLoss1 = ( AnnualSalaryLossVal1 / locValuation ) *100;
     const AnnualSalaryLoss3 = - ( AnnualSalaryLossVal3 / locValuation ) *100;
-	console.log(AnnualSalaryLoss1);
-	console.log(AnnualSalaryLoss3);
 
     const totalAnnualComp2 = locAnnualGrossSalary + ( ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4 )
     const totalAnnualComp1 = locAnnualGrossSalary*0.9 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
@@ -282,9 +280,9 @@ if ( jobLevel.value === 'senior-3' ){
     const shareCapitalOp2 = locJobLevel;
     const shareCapitalOp3 = locJobLevel + AnnualSalaryLoss3;
 	
-    const valueOfOptions1 = shareCapitalOp1 * locValuation;
-    const valueOfOptions2 = shareCapitalOp2 * locValuation;
-    const valueOfOptions3 = shareCapitalOp3 * locValuation;
+    const valueOfOptions1 = ( shareCapitalOp1 * locValuation ) / 100;
+    const valueOfOptions2 = ( shareCapitalOp2 * locValuation ) / 100;
+    const valueOfOptions3 = ( shareCapitalOp3 * locValuation ) / 100;
 
     setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
     setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
