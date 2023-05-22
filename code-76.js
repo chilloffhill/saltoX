@@ -409,9 +409,9 @@ if ( jobLevel.value === 'senior-3' ){
     
     setCellValue("message-text", loccalCulatorMessage);
 	
-    graphVal1 = Math.round(valueOfOptions1*4)
-    graphVal2 = Math.round(valueOfOptions2*4)
-    graphVal3 = Math.round(valueOfOptions3*4)
+    graphVal1 = Math.round(valueOfOptions1)
+    graphVal2 = Math.round(valueOfOptions2)
+    graphVal3 = Math.round(valueOfOptions3)
 
     option.series = [
         {
