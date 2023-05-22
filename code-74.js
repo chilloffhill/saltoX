@@ -414,19 +414,19 @@ if ( jobLevel.value === 'senior-3' ){
             name: '#3',
             type: 'line',
             stack: 'Total',
-            data: [graphOp3, graphOp3*3, graphOp3*5, graphOp3*10]
+            data: [valueOfOptions3*4, valueOfOptions3*4*3, valueOfOptions3*4*5, valueOfOptions3*4*10]
         },
         {
             name: '#2',
             type: 'line',
             stack: 'Total',
-            data: [graphOp2, graphOp2*3, graphOp2*5, graphOp2*10]
+            data: [valueOfOptions2*4, valueOfOptions2*4*3, valueOfOptions2*4*5, valueOfOptions2*4*10]
         },
         {
             name: '#1',
             type: 'line',
             stack: 'Total',
-            data: [graphOp1, graphOp1*3, graphOp1*5, graphOp1*10]
+            data: [valueOfOptions1*4, valueOfOptions1*4*3, valueOfOptions1*4*5, valueOfOptions1*4*10]
         }
     ]
     myChart.setOption(option, true);
