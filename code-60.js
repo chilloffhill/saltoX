@@ -268,21 +268,17 @@ if ( jobLevel.value === 'senior-3' ){
 	
     const AnnualSalaryLossVal1 = grossSalaryOp2 - grossSalaryOp1;
     const AnnualSalaryLossVal3 = grossSalaryOp3 - grossSalaryOp2;
-console.log('AnnualSalaryLossVal1: ' + AnnualSalaryLossVal1)
-console.log('AnnualSalaryLossVal3: ' + AnnualSalaryLossVal3)
 	
-    const AnnualSalaryLoss1 = AnnualSalaryLossVal1 / locValuation;
-    const AnnualSalaryLoss3 = - ( AnnualSalaryLossVal3 / locValuation );
-console.log('AnnualSalaryLoss1: ' + AnnualSalaryLoss1)
-console.log('AnnualSalaryLoss3: ' + AnnualSalaryLoss3)
+    const AnnualSalaryLoss1 = ( AnnualSalaryLossVal1 / locValuation ) *100;
+    const AnnualSalaryLoss3 = - ( AnnualSalaryLossVal3 / locValuation ) *100;
 
     const totalAnnualComp2 = locAnnualGrossSalary + ( ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4 )
     const totalAnnualComp1 = locAnnualGrossSalary*0.9 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
     const totalAnnualComp3 = locAnnualGrossSalary*1.1 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*1.1 ) * 4 ) / 4 )
     
-    const shareCapitalOp1 = locJobLevel + AnnualSalaryLoss1;
+    const shareCapitalOp1 = locJobLevel + AnnualSalaryLoss1.toFixed(4);
     const shareCapitalOp2 = locJobLevel;
-    const shareCapitalOp3 = locJobLevel + AnnualSalaryLoss3;
+    const shareCapitalOp3 = locJobLevel + AnnualSalaryLoss3.toFixed(4);
 	
     const valueOfOptions1 = shareCapitalOp1 * locValuation;
     const valueOfOptions2 = shareCapitalOp2 * locValuation;
