@@ -278,7 +278,7 @@ if ( jobLevel.value === 'senior-3' ){
     
     const shareCapitalOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) > 0 ) ? ( locJobLevel + AnnualSalaryLoss1 ) : locJobLevel;
     const shareCapitalOp2 = locJobLevel;
-    const shareCapitalOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) > 0 ) ? ( locJobLevel + shareCapitalOp3 ) : locJobLevel;
+    const shareCapitalOp3 = ( ( locJobLevel + AnnualSalaryLoss3 ) > 0 ) ? ( locJobLevel + AnnualSalaryLoss3 ) : locJobLevel;
 	
     const valueOfOptions1 = ( shareCapitalOp1 * locValuation ) / 100;
     const valueOfOptions2 = ( shareCapitalOp2 * locValuation ) / 100;
