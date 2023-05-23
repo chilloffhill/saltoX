@@ -53,8 +53,6 @@ const vestingPeriod = document.getElementById("vesting-period");
 const cliffPeriod = document.getElementById("cliff-period");
 const calculatorMessage = document.getElementById("calculator-message");
 
-console.log("jobLevel: "+jobLevel.text)
-
 const customValuation = document.getElementById("custom-valuation");
 const dropdownValuationLabel = document.getElementById("dropdown-valuation-label");
 const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label");
@@ -200,6 +198,7 @@ option = {
 
 //calculation for table and line graph
 const calcData = () => {
+	console.log("jobLevel: "+jobLevel.text)
 	let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
 	const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
 	let locValuation;
