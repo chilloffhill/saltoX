@@ -198,7 +198,7 @@ option = {
 
 //calculation for table and line graph
 const calcData = () => {
-	console.log("jobLevel: "+jobLevel.text)
+	console.log("jobLevel: "+ jobLevel)
 	let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
 	const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
 	let locValuation;
