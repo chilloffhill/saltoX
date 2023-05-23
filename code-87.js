@@ -53,6 +53,8 @@ const vestingPeriod = document.getElementById("vesting-period");
 const cliffPeriod = document.getElementById("cliff-period");
 const calculatorMessage = document.getElementById("calculator-message");
 
+console.log("jobLevel: "+jobLevel.text)
+
 const customValuation = document.getElementById("custom-valuation");
 const dropdownValuationLabel = document.getElementById("dropdown-valuation-label");
 const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label");
