@@ -186,7 +186,7 @@ const calcData = () => {
     let locValuation;
     let locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
     let maxJobLevel = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
-    const locAnnualGrossSalary = annualGrossSalary.value === '' ? 6000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
+    const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
     const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!
 
 We are thrilled to offer you a position in our team!
@@ -343,10 +343,6 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
     setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
     setCellValue("gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
-	
-    setCellValue("gross-salary-monthly-op-1", '€' + Math.round(grossSalaryMonthlyOp1));
-    setCellValue("gross-salary-monthly-op-2", '€' + Math.round(grossSalaryMonthlyOp2));
-    setCellValue("gross-salary-monthly-op-3", '€' + Math.round(grossSalaryMonthlyOp3));
 
     setCellValue("company-options-op-1", Math.round(companyOptions1));
     setCellValue("company-options-op-2", Math.round(companyOptions2));
@@ -360,10 +356,6 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
     setCellValue("share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
 	
-    setCellValue("total-compensation-y-e-op-1", '€' + Math.round(totalCompensationYEOp1));
-    setCellValue("total-compensation-y-e-op-2", '€' + Math.round(totalCompensationYEOp2));
-    setCellValue("total-compensation-y-e-op-3", '€' + Math.round(totalCompensationYEOp3));
-	
     setCellValue("total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
     setCellValue("total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
     setCellValue("total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
@@ -373,10 +365,6 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("t-2-gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
     setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
     setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
-	
-    setCellValue("t-2-gross-salary-monthly-op-1", '€' + Math.round(grossSalaryMonthlyOp1));
-    setCellValue("t-2-gross-salary-monthly-op-2", '€' + Math.round(grossSalaryMonthlyOp2));
-    setCellValue("t-2-gross-salary-monthly-op-3", '€' + Math.round(grossSalaryMonthlyOp3));
 
     setCellValue("t-2-company-options-op-1", Math.round(companyOptions1));
     setCellValue("t-2-company-options-op-2", Math.round(companyOptions2));
@@ -389,10 +377,6 @@ if ( jobLevel.value === 'senior-3' ){
     setCellValue("t-2-share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
     setCellValue("t-2-share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
     setCellValue("t-2-share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
-	
-    setCellValue("t-2-total-compensation-y-e-op-1", '€' + Math.round(totalCompensationYEOp1));
-    setCellValue("t-2-total-compensation-y-e-op-2", '€' + Math.round(totalCompensationYEOp2));
-    setCellValue("t-2-total-compensation-y-e-op-3", '€' + Math.round(totalCompensationYEOp3));
 	
     setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
     setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
