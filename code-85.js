@@ -331,7 +331,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	if ( typeValue === "VSOP" ) {
 		$("input[name=type][value=" + "ESOP" + "]").prop('checked', true);
 		checkboxError.style.display = 'block';
-		heckboxError.style.opacity = 1;
+		checkboxError.style.opacity = 1;
 		setTimeout(function() {
 			checkboxError.style.opacity = 0;
 			setTimeout(function() {
@@ -539,6 +539,8 @@ calculatorMessage.addEventListener("input", () => {
     calcData();
 });
 
+checkboxError.style.display = 'none';
+checkboxError.style.opacity = 0;
 allowOnlyNumbers(shares);
 allowOnlyNumbers(annualGrossSalary);
 formatNumberInput(customPoolSize);
