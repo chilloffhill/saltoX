@@ -326,6 +326,20 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let totalCompensationWEOp2 = grossSalaryOp2 + valueOfOptions2;
 	let totalCompensationWEOp3 = grossSalaryOp3 + valueOfOptions3;
 	
+	//checkbox
+
+	if ( typeValue === "VSOP" ) {
+		$("input[name=type][value=" + "ESOP" + "]").prop('checked', true);
+		checkboxError.style.display = 'block';
+		heckboxError.style.opacity = 1;
+		setTimeout(function() {
+			checkboxError.style.opacity = 0;
+			setTimeout(function() {
+				checkboxError.style.display = 'none';
+			}, 500);
+		}, 2000);
+	}
+	
 	// check
 
 	grossSalaryOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? grossSalaryOp1 : grossSalaryOp2;
