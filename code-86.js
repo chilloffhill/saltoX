@@ -126,6 +126,15 @@ const calcTableLowError = document.getElementById("calc-table-low-error");
 
 const checkboxError = document.getElementById("checkbox-error");
 
+const type = document.getElementById("type");
+const optionPoolSize = document.getElementById("option-pool-size");
+const companyShares = document.getElementById("company-shares");
+const currentCompanyValuation = document.getElementById("current-company-valuation");
+const jobLevelData = document.getElementById("job-level-data");
+const annualGrossSalaryData = document.getElementById("annual-gross-salary-data");
+const vestingPeriodData = document.getElementById("vesting-period-data");
+const cliffPeriodData = document.getElementById("cliff-period-data");
+
 calcTableLowError.style.display = "none";
 calcTableLowError.style.opacity = "0";
 
@@ -329,14 +338,13 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	//checkbox
 
 	if ( typeValue === "VSOP" ) {
+		typeValue = "ESOP";
 		$("input[name=type][value=" + "ESOP" + "]").prop('checked', true);
 		checkboxError.style.display = 'block';
 		checkboxError.style.opacity = 1;
 		setTimeout(function() {
 			checkboxError.style.opacity = 0;
-			setTimeout(function() {
-				checkboxError.style.display = 'none';
-			}, 500);
+			checkboxError.style.display = 'none';
 		}, 2000);
 	}
 	
@@ -445,6 +453,17 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	graphVal1 = Math.round(valueOfOptions1)
 	graphVal2 = Math.round(valueOfOptions2)
 	graphVal3 = Math.round(valueOfOptions3)
+	
+	// cms 2
+
+	type.value = typeValue
+	optionPoolSize.value = locCustomPoolSize
+	companyShares.value = locShares
+	currentCompanyValuation.value = locValuation
+	jobLevelData.value = locJobLevel
+	annualGrossSalaryData.value = locAnnualGrossSalary
+	vestingPeriodData.value = vestingPeriod.value
+	cliffPeriodData.value = cliffPeriod.value
 
 	if( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ){
 	calcTableLowError.style.display = "none";
