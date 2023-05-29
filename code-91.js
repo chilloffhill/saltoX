@@ -480,7 +480,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	    name: '#3',
 	    type: 'line',
 	    stack: 'Total',
-	    data: [graphVal3, graphVal3*3, graphVal3*5, graphVal3*10, graphVal3*10]
+	    data: [graphVal3, graphVal3*3, graphVal3*5, graphVal3*10, graphVal3*50]
 	},
 	{
 	    name: '#2',
