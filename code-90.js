@@ -163,29 +163,30 @@ option = {
     xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['Current value', '3x', '5x', '10x']
+        data: ['Current value', '3x', '5x', '10x', '50x']
     },
     yAxis: {
-        type: 'value'
+        type: 'value',
+	name: 'Value in €'
     },
     series: [
         {
             name: '#3',
             type: 'line',
             stack: 'Total',
-            data: [graphOp3, graphOp3*3, graphOp3*5, graphOp3*10]
+            data: [graphOp3, graphOp3*3, graphOp3*5, graphOp3*10, graphOp3*50]
         },
         {
             name: '#2',
             type: 'line',
             stack: 'Total',
-            data: [graphOp2, graphOp2*3, graphOp2*5, graphOp2*10]
+            data: [graphOp2, graphOp2*3, graphOp2*5, graphOp2*10, graphOp2*50]
         },
         {
             name: '#1',
             type: 'line',
             stack: 'Total',
-            data: [graphOp1, graphOp1*3, graphOp1*5, graphOp1*10]
+            data: [graphOp1, graphOp1*3, graphOp1*5, graphOp1*10, graphOp1*50]
         }
 
     ],
@@ -479,19 +480,19 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	    name: '#3',
 	    type: 'line',
 	    stack: 'Total',
-	    data: [graphVal3, graphVal3*3, graphVal3*5, graphVal3*10]
+	    data: [graphVal3, graphVal3*3, graphVal3*5, graphVal3*10, graphVal3*10]
 	},
 	{
 	    name: '#2',
 	    type: 'line',
 	    stack: 'Total',
-	    data: [graphVal2, graphVal2*3, graphVal2*5, graphVal2*10]
+	    data: [graphVal2, graphVal2*3, graphVal2*5, graphVal2*10, graphVal2*50]
 	},
 	{
 	    name: '#1',
 	    type: 'line',
 	    stack: 'Total',
-	    data: [graphVal1, graphVal1*3, graphVal1*5, graphVal1*10]
+	    data: [graphVal1, graphVal1*3, graphVal1*5, graphVal1*10, graphVal1*50]
 	}
 	]
 	myChart.setOption(option, true);
