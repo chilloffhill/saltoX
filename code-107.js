@@ -135,6 +135,12 @@ const rowLabel3 = document.getElementById('label-row-3');
 const rowLabel4 = document.getElementById('label-row-4');
 const rowLabel5 = document.getElementById('label-row-5');
 
+const t2RowLabel1 = document.getElementById('t-2-label-row-1');
+const t2RowLabel2 = document.getElementById('t-2-label-row-2');
+const t2RowLabel3 = document.getElementById('t-2-label-row-3');
+const t2RowLabel4 = document.getElementById('t-2-label-row-4');
+const t2RowLabel5 = document.getElementById('t-2-label-row-5');
+
 calcTableLowError.style.display = "none";
 calcTableLowError.style.opacity = "0";
 
@@ -440,6 +446,12 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		rowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
 		rowLabel5.textContent = 'Current estimated value of options';
 
+		t2RowLabel1.textContent = 'Gross salary annually';
+		t2RowLabel2.textContent = 'Virtual options';
+		t2RowLabel3.textContent = 'as % of future company value';
+		t2RowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
+		t2RowLabel5.textContent = 'Current estimated value of options';
+
 		// set table
 
 		setCellValue("gross-salary-op-1", '€' + Math.floor(grantValueVSOPop1));
@@ -526,6 +538,12 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		rowLabel3.textContent = 'as % of share capital';
 		rowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
 		rowLabel5.textContent = 'Current estimated value of options';
+
+		t2RowLabel1.textContent = 'Gross salary annually';
+		t2RowLabel2.textContent = 'Company options';
+		t2RowLabel3.textContent = 'as % of share capital';
+		t2RowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
+		t2RowLabel5.textContent = 'Current estimated value of options';
 		
 		// set table
 
