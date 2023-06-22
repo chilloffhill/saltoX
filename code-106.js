@@ -129,6 +129,12 @@ const annualGrossSalaryData = document.getElementById("annual-gross-salary-data"
 const vestingPeriodData = document.getElementById("vesting-period-data");
 const cliffPeriodData = document.getElementById("cliff-period-data");
 
+const rowLabel1 = document.getElementById('label-row-1');
+const rowLabel2 = document.getElementById('label-row-2');
+const rowLabel3 = document.getElementById('label-row-3');
+const rowLabel4 = document.getElementById('label-row-4');
+const rowLabel5 = document.getElementById('label-row-5');
+
 calcTableLowError.style.display = "none";
 calcTableLowError.style.opacity = "0";
 
@@ -426,6 +432,14 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 
 	if ( typeValue === "VSOP" ) {
 
+		// set rows labels
+
+		rowLabel1.textContent = 'Gross salary annually';
+		rowLabel2.textContent = 'Virtual options';
+		rowLabel3.textContent = 'as % of future company value';
+		rowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
+		rowLabel5.textContent = 'Current estimated value of options';
+
 		// set table
 
 		setCellValue("gross-salary-op-1", '€' + Math.floor(grantValueVSOPop1));
@@ -445,8 +459,8 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("share-capital-op-3", grantSizeVSOPop3.toFixed(2) + '%');
 	
 		setCellValue("total-compensation-w-e-op-1", '€' + Math.floor(totalCompensationVSOPop1));
-		setCellValue("total-compensation-w-e-op-2", '€' + Math.floor(totalCompensationVSOPop1));
-		setCellValue("total-compensation-w-e-op-3", '€' + Math.floor(totalCompensationVSOPop1));
+		setCellValue("total-compensation-w-e-op-2", '€' + Math.floor(totalCompensationVSOPop2));
+		setCellValue("total-compensation-w-e-op-3", '€' + Math.floor(totalCompensationVSOPop3));
 	
 		// preview
 	
@@ -505,6 +519,14 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		graphVal3 = Math.round(annualCompensationVSOPop3)
 		
 	}else{
+		// set rows labels
+
+		rowLabel1.textContent = 'Gross salary annually';
+		rowLabel2.textContent = 'Company options';
+		rowLabel3.textContent = 'as % of share capital';
+		rowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
+		rowLabel5.textContent = 'Current estimated value of options';
+		
 		// set table
 
 		setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
