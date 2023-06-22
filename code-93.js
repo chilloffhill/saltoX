@@ -361,11 +361,11 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let fixedValueForGrantVSOP = ( GrantValueWithoutBenchmarkVSOP < maxJobLevel ) ? GrantValueWithoutBenchmarkVSOP : maxJobLevel;
 
 	let AnnualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation )
-	let AnnualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop3 / locValuation )
+	let AnnualSalaryLossGainVSOPop2 = - ( annualSalaryLossInEURVSOPop3 / locValuation )
 
 	let GrantSizeVSOPop1 = fixedValueForGrantVSOP + AnnualSalaryLossGainVSOPop1;
-	let GrantSizeVSOPop1 = fixedValueForGrantVSOP
-	let GrantSizeVSOPop1 = fixedValueForGrantVSOP + AnnualSalaryLossGainVSOPop3;
+	let GrantSizeVSOPop2 = fixedValueForGrantVSOP
+	let GrantSizeVSOPop3 = fixedValueForGrantVSOP + AnnualSalaryLossGainVSOPop3;
 
 	let GrantValueVSOPop1 = locValuation * GrantSizeVSOPop1 / 100
 	let GrantValueVSOPop2 = locValuation * GrantSizeVSOPop2 / 100
