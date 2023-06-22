@@ -388,7 +388,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	if ( typeValue === "VSOP" ) {
 		console.log("Grant value" + "/" + GrantValueVSOPop1 + "/" + GrantValueVSOPop2 + "/" + GrantValueVSOPop3)
 		console.log("Divide equity value into vesting time" + "/" + DivideEquityValueVSOPop1 + "/" + DivideEquityValueVSOPop2 + "/" + DivideEquityValueVSOPop3)
-		console.log("Grant size" + "/" + GrantSizeVSOPop1 + "/" + GrantSizeVSOPop2 + "/" + GrantSizeVSOPo3)
+		console.log("Grant size" + "/" + GrantSizeVSOPop1 + "/" + GrantSizeVSOPop2 + "/" + GrantSizeVSOPop3)
 		console.log("1st year total compensation" + "/" + totalCompensationVSOPop1 + "/" + totalCompensationVSOPop2 + "/" + totalCompensationVSOPop3)
 		console.log("1st year Annual compensation + equity value" + "/" + annualCompensationVSOPop1 + "/" + annualCompensationVSOPop2 + "/" + annualCompensationVSOPop3)
 	}
