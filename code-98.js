@@ -57,12 +57,6 @@ const customValuation = document.getElementById("custom-valuation");
 const dropdownValuationLabel = document.getElementById("dropdown-valuation-label");
 const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label");
 
-console.log('typeESOP' + typeESOP);
-console.log('typeVSOP' + typeVSOP);
-
-console.log('typeESOP value' + typeESOP.value);
-console.log('typeVSOP value' + typeVSOP.value);
-
 calculatorMessage.placeholder = placeholder= `Hey! 
 
 We are thrilled to offer you a position in our team!
@@ -355,6 +349,8 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let GrantValueVSOP = grossSalaryVSOPOp2 * locJobLevel / 100;
 
 	let GrantValueWithoutBenchmarkVSOP = GrantValueVSOP / locValuation;
+
+	console.log("GrantValueWithoutBenchmarkVSOP: " + GrantValueWithoutBenchmarkVSOP)
 
 	let fixedValueForGrantVSOP = ( GrantValueWithoutBenchmarkVSOP < maxJobLevel ) ? GrantValueWithoutBenchmarkVSOP : maxJobLevel;
 
