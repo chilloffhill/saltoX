@@ -374,66 +374,35 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 
 	let annualSalaryLossInEURVSOPop1 = grossSalaryVSOPOp1 - grossSalaryVSOPOp2;
 	let annualSalaryLossInEURVSOPop3 = grossSalaryVSOPOp3 - grossSalaryVSOPOp2;
-
-	console.log("grossSalaryVSOPOp2: " + grossSalaryVSOPOp2)
-	console.log("locJobLevelVSOP: " + locJobLevelVSOP)
+	
 	let GrantValueVSOP = grossSalaryVSOPOp2 * locJobLevelVSOP / 100;
-	console.log("GrantValueVSOP: " + GrantValueVSOP)
 
 	let GrantValueWithoutBenchmarkVSOP = ( GrantValueVSOP / locValuation ) * 100;
 
-	console.log("GrantValueWithoutBenchmarkVSOP: " + GrantValueWithoutBenchmarkVSOP)
-
 	let fixedValueForGrantVSOP = ( GrantValueWithoutBenchmarkVSOP < maxJobLevelVSOP ) ? GrantValueWithoutBenchmarkVSOP : maxJobLevelVSOP;
 
-	console.log("annualSalaryLossInEURVSOPop1: " + annualSalaryLossInEURVSOPop1)
-	console.log("annualSalaryLossInEURVSOPop3: " + annualSalaryLossInEURVSOPop3)
-	console.log("locValuation: " + locValuation)
 	let annualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation ) * 100
 	let annualSalaryLossGainVSOPop3 = - ( annualSalaryLossInEURVSOPop3 / locValuation ) * 100
-	console.log("annualSalaryLossGainVSOPop1: " + annualSalaryLossGainVSOPop1)
-	console.log("annualSalaryLossGainVSOPop3: " + annualSalaryLossGainVSOPop3)
 
-	let GrantSizeVSOPop1 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop1;
-	let GrantSizeVSOPop2 = fixedValueForGrantVSOP
-	let GrantSizeVSOPop3 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop3;
-	console.log("GrantSizeVSOPop1: " + GrantSizeVSOPop1)
-	console.log("GrantSizeVSOPop2: " + GrantSizeVSOPop2)
-	console.log("GrantSizeVSOPop3: " + GrantSizeVSOPop3)
+	let grantSizeVSOPop1 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop1;
+	let grantSizeVSOPop2 = fixedValueForGrantVSOP
+	let grantSizeVSOPop3 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop3;
 
-	let GrantValueVSOPop1 = locValuation * GrantSizeVSOPop1 / 100;
-	let GrantValueVSOPop2 = locValuation * GrantSizeVSOPop2 / 100;
-	let GrantValueVSOPop3 = locValuation * GrantSizeVSOPop3 / 100;
-	console.log("GrantValueVSOPop1: " + GrantValueVSOPop1)
-	console.log("GrantValueVSOPop2: " + GrantValueVSOPop2)
-	console.log("GrantValueVSOPop3: " + GrantValueVSOPop3)
+	let grantValueVSOPop1 = locValuation * grantSizeVSOPop1 / 100;
+	let grantValueVSOPop2 = locValuation * grantSizeVSOPop2 / 100;
+	let grantValueVSOPop3 = locValuation * grantSizeVSOPop3 / 100;
 
-	let DivideEquityValueVSOPop1 = GrantValueVSOPop1 / locVesting;
-	let DivideEquityValueVSOPop2 = GrantValueVSOPop2 / locVesting;
-	let DivideEquityValueVSOPop3 = GrantValueVSOPop3 / locVesting;
-	console.log("DivideEquityValueVSOPop1: " + DivideEquityValueVSOPop1)
-	console.log("DivideEquityValueVSOPop2: " + DivideEquityValueVSOPop2)
-	console.log("DivideEquityValueVSOPop3: " + DivideEquityValueVSOPop3)
+	let divideEquityValueVSOPop1 = grantValueVSOPop1 / locVesting;
+	let divideEquityValueVSOPop2 = grantValueVSOPop2 / locVesting;
+	let divideEquityValueVSOPop3 = grantValueVSOPop3 / locVesting;
 
-	let totalCompensationVSOPop1 = DivideEquityValueVSOPop1 + grossSalaryVSOPOp1;
-	let totalCompensationVSOPop2 = DivideEquityValueVSOPop2 + grossSalaryVSOPOp2;
-	let totalCompensationVSOPop3 = DivideEquityValueVSOPop3 + grossSalaryVSOPOp3;
-	console.log("totalCompensationVSOPop1: " + totalCompensationVSOPop1)
-	console.log("totalCompensationVSOPop2: " + totalCompensationVSOPop2)
-	console.log("totalCompensationVSOPop3: " + totalCompensationVSOPop3)
+	let totalCompensationVSOPop1 = divideEquityValueVSOPop1 + grossSalaryVSOPOp1;
+	let totalCompensationVSOPop2 = divideEquityValueVSOPop2 + grossSalaryVSOPOp2;
+	let totalCompensationVSOPop3 = divideEquityValueVSOPop3 + grossSalaryVSOPOp3;
 
-	let annualCompensationVSOPop1 = grossSalaryVSOPOp1 + GrantValueVSOPop1;
-	let annualCompensationVSOPop2 = grossSalaryVSOPOp2 + GrantValueVSOPop2;
-	let annualCompensationVSOPop3 = grossSalaryVSOPOp3 + GrantValueVSOPop3;
-	console.log("annualCompensationVSOPop1: " + annualCompensationVSOPop1)
-	console.log("annualCompensationVSOPop2: " + annualCompensationVSOPop2)
-	console.log("annualCompensationVSOPop3: " + annualCompensationVSOPop3)
-	
-	//checkbox
-
-	if ( typeValue === "VSOP" ) {
-		
-	}
+	let annualCompensationVSOPop1 = grossSalaryVSOPOp1 + grantValueVSOPop1;
+	let annualCompensationVSOPop2 = grossSalaryVSOPOp2 + grantValueVSOPop2;
+	let annualCompensationVSOPop3 = grossSalaryVSOPOp3 + grantValueVSOPop3;
 	
 	// check
 
@@ -455,91 +424,173 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	valueOfOptions1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? valueOfOptions1 : valueOfOptions2;
 	valueOfOptions3 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? valueOfOptions3 : valueOfOptions2;
 
-	// set table
+	if ( typeValue === "VSOP" ) {
 
-	setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
-	setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
-	setCellValue("gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
+		// set table
 
-	setCellValue("company-options-op-1", Math.round(companyOptions1));
-	setCellValue("company-options-op-2", Math.round(companyOptions2));
-	setCellValue("company-options-op-3", Math.round(companyOptions3));
+		setCellValue("gross-salary-op-1", '€' + Math.floor(grantValueVSOPop1));
+		setCellValue("gross-salary-op-2", '€' + Math.floor(grantValueVSOPop2));
+		setCellValue("gross-salary-op-3", '€' + Math.floor(grantValueVSOPop3));
+	
+		setCellValue("company-options-op-1", '€' + Math.floor(divideEquityValueVSOPop1));
+		setCellValue("company-options-op-2", '€' + Math.floor(divideEquityValueVSOPop2));
+		setCellValue("company-options-op-3", '€' + Math.floor(divideEquityValueVSOPop3));
+	
+		setCellValue("value-of-options-op-1", '€' + Math.floor(annualCompensationVSOPop1));
+		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop1));
+		setCellValue("value-of-options-op-3", '€' + Math.floor(annualCompensationVSOPop1));
+	
+		setCellValue("share-capital-op-1", grantSizeVSOPop1.toFixed(2) + '%');
+		setCellValue("share-capital-op-2", grantSizeVSOPop2.toFixed(2) + '%');
+		setCellValue("share-capital-op-3", grantSizeVSOPop3.toFixed(2) + '%');
+	
+		setCellValue("total-compensation-w-e-op-1", '€' + Math.floor(totalCompensationVSOPop1));
+		setCellValue("total-compensation-w-e-op-2", '€' + Math.floor(totalCompensationVSOPop1));
+		setCellValue("total-compensation-w-e-op-3", '€' + Math.floor(totalCompensationVSOPop1));
+	
+		// preview
+	
+		setCellValue("t-2-gross-salary-op-1", '€' + Math.floor(grantValueVSOPop1));
+		setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
+		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
+	
+		setCellValue("t-2-company-options-op-1", '€' + Math.floor(divideEquityValueVSOPop1));
+		setCellValue("t-2-company-options-op-2", '€' + Math.floor(divideEquityValueVSOPop2));
+		setCellValue("t-2-company-options-op-3", '€' + Math.floor(divideEquityValueVSOPop3));
+	
+		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
+		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
+		setCellValue("t-2-value-of-options-op-3", '€' + Math.round(annualCompensationVSOPop3));
+	
+		setCellValue("t-2-share-capital-op-1", grantSizeVSOPop1.toFixed(2) + '%');
+		setCellValue("t-2-share-capital-op-2", grantSizeVSOPop2.toFixed(2) + '%');
+		setCellValue("t-2-share-capital-op-3", grantSizeVSOPop3.toFixed(2) + '%');
+	
+		setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationVSOPop1));
+		setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationVSOPop2));
+		setCellValue("t-2-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationVSOPop3));
 
-	setCellValue("value-of-options-op-1", '€' + Math.round(valueOfOptions1));
-	setCellValue("value-of-options-op-2", '€' + Math.round(valueOfOptions2));
-	setCellValue("value-of-options-op-3", '€' + Math.round(valueOfOptions3));
+		// cms
 
-	setCellValue("share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
-	setCellValue("share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
-	setCellValue("share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
+		cmsGrossSalaryOp1.value = '€' + Math.round(grantValueVSOPop1)
+		cmsGrossSalaryOp2.value = '€' + Math.round(grantValueVSOPop2)
+		cmsGrossSalaryOp3.value = '€' + Math.round(grantValueVSOPop3)
+	
+		cmsCompanyOptionsOp1.value = '€' + Math.round(divideEquityValueVSOPop1)
+		cmsCompanyOptionsOp2.value = '€' + Math.round(divideEquityValueVSOPop1)
+		cmsCompanyOptionsOp3.value = '€' + Math.round(divideEquityValueVSOPop1)
+	
+		cmsShareCapitalOp1.value = grantSizeVSOPop1.toFixed(2) + '%'
+		cmsShareCapitalOp2.value = grantSizeVSOPop2.toFixed(2) + '%'
+		cmsShareCapitalOp3.value = grantSizeVSOPop3.toFixed(2) + '%'
+	
+		cmsCulcM.value = loccalCulatorMessage;
+	
+		cmsGraphOp1.value = Math.round(annualCompensationVSOPop1)
+		cmsGraphOp4.value = Math.round(annualCompensationVSOPop2)
+		cmsGraphOp3.value = Math.round(annualCompensationVSOPop3)
+	
+		cmsTotalCompensationWEOp1.value = '€' + Math.round(totalCompensationVSOPop1)
+		cmsTotalCompensationWEOp2.value = '€' + Math.round(totalCompensationVSOPop2)
+		cmsTotalCompensationWEOp3.value = '€' + Math.round(totalCompensationVSOPop3)
+	
+		cmsValueOfOptionsOp1.value = '€' + Math.round(annualCompensationVSOPop1)
+		cmsValueOfOptionsOp2.value = '€' + Math.round(annualCompensationVSOPop2)
+		cmsValueOfOptionsOp3.value = '€' + Math.round(annualCompensationVSOPop3)
+	
+		setCellValue("message-text", loccalCulatorMessage);
+	
+		graphVal1 = Math.round(annualCompensationVSOPop1)
+		graphVal2 = Math.round(annualCompensationVSOPop2)
+		graphVal3 = Math.round(annualCompensationVSOPop3)
+		
+	}else{
+		// set table
 
-	setCellValue("total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
-	setCellValue("total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
-	setCellValue("total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
-
-	// preview
-
-	setCellValue("t-2-gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
-	setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
-	setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
-
-	setCellValue("t-2-company-options-op-1", Math.round(companyOptions1));
-	setCellValue("t-2-company-options-op-2", Math.round(companyOptions2));
-	setCellValue("t-2-company-options-op-3", Math.round(companyOptions3));
-
-	setCellValue("t-2-value-of-options-op-1", '€' + Math.round(valueOfOptions1));
-	setCellValue("t-2-value-of-options-op-2", '€' + Math.round(valueOfOptions2));
-	setCellValue("t-2-value-of-options-op-3", '€' + Math.round(valueOfOptions3));
-
-	setCellValue("t-2-share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
-	setCellValue("t-2-share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
-	setCellValue("t-2-share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
-
-	setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
-	setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
-	setCellValue("t-2-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
-
-	// cms
-
-	cmsGrossSalaryOp1.value = '€' + Math.round(grossSalaryOp1)
-	cmsGrossSalaryOp2.value = '€' + Math.round(grossSalaryOp2)
-	cmsGrossSalaryOp3.value = '€' + Math.round(grossSalaryOp3)
-
-	cmsGrossSalaryMonthlyOp1.value = '€' + Math.round(grossSalaryMonthlyOp1)
-	cmsGrossSalaryMonthlyOp2.value = '€' + Math.round(grossSalaryMonthlyOp2)
-	cmsGrossSalaryMonthlyOp3.value = '€' + Math.round(grossSalaryMonthlyOp3)
-
-	cmsCompanyOptionsOp1.value = Math.round(companyOptions1)
-	cmsCompanyOptionsOp2.value = Math.round(companyOptions2)
-	cmsCompanyOptionsOp3.value = Math.round(companyOptions3)
-
-	cmsShareCapitalOp1.value = shareCapitalOp1.toFixed(2) + '%'
-	cmsShareCapitalOp2.value = shareCapitalOp2.toFixed(2) + '%'
-	cmsShareCapitalOp3.value = shareCapitalOp3.toFixed(2) + '%'
-
-	cmsCulcM.value = loccalCulatorMessage;
-
-	cmsGraphOp1.value = Math.round(valueOfOptions1)
-	cmsGraphOp4.value = Math.round(valueOfOptions2)
-	cmsGraphOp3.value = Math.round(valueOfOptions3)
-
-	cmsTotalCompensationYEOp1.value = '€' + Math.round(totalCompensationYEOp1)
-	cmsTotalCompensationYEOp2.value = '€' + Math.round(totalCompensationYEOp2)
-	cmsTotalCompensationYEOp3.value = '€' + Math.round(totalCompensationYEOp3)
-
-	cmsTotalCompensationWEOp1.value = '€' + Math.round(totalCompensationWEOp1)
-	cmsTotalCompensationWEOp2.value = '€' + Math.round(totalCompensationWEOp2)
-	cmsTotalCompensationWEOp3.value = '€' + Math.round(totalCompensationWEOp3)
-
-	cmsValueOfOptionsOp1.value = '€' + Math.round(valueOfOptions1)
-	cmsValueOfOptionsOp2.value = '€' + Math.round(valueOfOptions2)
-	cmsValueOfOptionsOp3.value = '€' + Math.round(valueOfOptions3)
-
-	setCellValue("message-text", loccalCulatorMessage);
-
-	graphVal1 = Math.round(valueOfOptions1)
-	graphVal2 = Math.round(valueOfOptions2)
-	graphVal3 = Math.round(valueOfOptions3)
+		setCellValue("gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
+		setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
+		setCellValue("gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
+	
+		setCellValue("company-options-op-1", Math.round(companyOptions1));
+		setCellValue("company-options-op-2", Math.round(companyOptions2));
+		setCellValue("company-options-op-3", Math.round(companyOptions3));
+	
+		setCellValue("value-of-options-op-1", '€' + Math.round(valueOfOptions1));
+		setCellValue("value-of-options-op-2", '€' + Math.round(valueOfOptions2));
+		setCellValue("value-of-options-op-3", '€' + Math.round(valueOfOptions3));
+	
+		setCellValue("share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
+		setCellValue("share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
+		setCellValue("share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
+	
+		setCellValue("total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
+		setCellValue("total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
+		setCellValue("total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
+	
+		// preview
+	
+		setCellValue("t-2-gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
+		setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
+		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
+	
+		setCellValue("t-2-company-options-op-1", Math.round(companyOptions1));
+		setCellValue("t-2-company-options-op-2", Math.round(companyOptions2));
+		setCellValue("t-2-company-options-op-3", Math.round(companyOptions3));
+	
+		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(valueOfOptions1));
+		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(valueOfOptions2));
+		setCellValue("t-2-value-of-options-op-3", '€' + Math.round(valueOfOptions3));
+	
+		setCellValue("t-2-share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
+		setCellValue("t-2-share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
+		setCellValue("t-2-share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
+	
+		setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
+		setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
+		setCellValue("t-2-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
+	
+		// cms
+	
+		cmsGrossSalaryOp1.value = '€' + Math.round(grossSalaryOp1)
+		cmsGrossSalaryOp2.value = '€' + Math.round(grossSalaryOp2)
+		cmsGrossSalaryOp3.value = '€' + Math.round(grossSalaryOp3)
+	
+		cmsGrossSalaryMonthlyOp1.value = '€' + Math.round(grossSalaryMonthlyOp1)
+		cmsGrossSalaryMonthlyOp2.value = '€' + Math.round(grossSalaryMonthlyOp2)
+		cmsGrossSalaryMonthlyOp3.value = '€' + Math.round(grossSalaryMonthlyOp3)
+	
+		cmsCompanyOptionsOp1.value = Math.round(companyOptions1)
+		cmsCompanyOptionsOp2.value = Math.round(companyOptions2)
+		cmsCompanyOptionsOp3.value = Math.round(companyOptions3)
+	
+		cmsShareCapitalOp1.value = shareCapitalOp1.toFixed(2) + '%'
+		cmsShareCapitalOp2.value = shareCapitalOp2.toFixed(2) + '%'
+		cmsShareCapitalOp3.value = shareCapitalOp3.toFixed(2) + '%'
+	
+		cmsCulcM.value = loccalCulatorMessage;
+	
+		cmsGraphOp1.value = Math.round(valueOfOptions1)
+		cmsGraphOp4.value = Math.round(valueOfOptions2)
+		cmsGraphOp3.value = Math.round(valueOfOptions3)
+	
+		cmsTotalCompensationYEOp1.value = '€' + Math.round(totalCompensationYEOp1)
+		cmsTotalCompensationYEOp2.value = '€' + Math.round(totalCompensationYEOp2)
+		cmsTotalCompensationYEOp3.value = '€' + Math.round(totalCompensationYEOp3)
+	
+		cmsTotalCompensationWEOp1.value = '€' + Math.round(totalCompensationWEOp1)
+		cmsTotalCompensationWEOp2.value = '€' + Math.round(totalCompensationWEOp2)
+		cmsTotalCompensationWEOp3.value = '€' + Math.round(totalCompensationWEOp3)
+	
+		cmsValueOfOptionsOp1.value = '€' + Math.round(valueOfOptions1)
+		cmsValueOfOptionsOp2.value = '€' + Math.round(valueOfOptions2)
+		cmsValueOfOptionsOp3.value = '€' + Math.round(valueOfOptions3)
+	
+		setCellValue("message-text", loccalCulatorMessage);
+	
+		graphVal1 = Math.round(valueOfOptions1)
+		graphVal2 = Math.round(valueOfOptions2)
+		graphVal3 = Math.round(valueOfOptions3)
+	}
 	
 	// cms 2
 
@@ -553,11 +604,11 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	cliffPeriodData.value = cliffPeriod.value
 
 	if( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ){
-	calcTableLowError.style.display = "none";
-	calcTableLowError.style.opacity = "0";
+		calcTableLowError.style.display = "none";
+		calcTableLowError.style.opacity = "0";
 	}else{
-	calcTableLowError.style.display = "block";
-	calcTableLowError.style.opacity = "1";
+		calcTableLowError.style.display = "block";
+		calcTableLowError.style.opacity = "1";
 	}
 
 	option.series = [
