@@ -199,7 +199,6 @@ option = {
 
 //calculation for table and line graph
 const calcData = () => {
-	console.log("jobLevel: "+ jobLevel)
 	let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
 	const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
 	let locValuation;
@@ -273,18 +272,17 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	customValuation.value = '';
 	locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
 	}
-	console.log(locValuation);
 
 	if (valuation.value === ''){
-	dropdownValuationLabel.style.color = '#90909D'; 
+		dropdownValuationLabel.style.color = '#90909D'; 
 	}else{
-	dropdownValuationLabel.style.color = '#1F1F2D'; 
+		dropdownValuationLabel.style.color = '#1F1F2D'; 
 	}
 
 	if (jobLevel.value === ''){
-	dropdownJobJevelJabel.style.color = '#90909D'; 
+		dropdownJobJevelJabel.style.color = '#90909D'; 
 	}else{
-	dropdownJobJevelJabel.style.color = '#1F1F2D'; 
+		dropdownJobJevelJabel.style.color = '#1F1F2D'; 
 	}
 
 	locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
@@ -367,6 +365,10 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let GrantSizeVSOPop2 = fixedValueForGrantVSOP
 	let GrantSizeVSOPop3 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop3;
 
+	console.log('GrantSizeVSOPop1:' + GrantSizeVSOPop1)
+	console.log(GrantSizeVSOPop2)
+	console.log(GrantSizeVSOPop3)
+
 	let GrantValueVSOPop1 = locValuation * GrantSizeVSOPop1 / 100
 	let GrantValueVSOPop2 = locValuation * GrantSizeVSOPop2 / 100
 	let GrantValueVSOPop3 = locValuation * GrantSizeVSOPop3 / 100
@@ -386,11 +388,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	//checkbox
 
 	if ( typeValue === "VSOP" ) {
-		console.log("Grant value" + "/" + GrantValueVSOPop1 + "/" + GrantValueVSOPop2 + "/" + GrantValueVSOPop3)
-		console.log("Divide equity value into vesting time" + "/" + DivideEquityValueVSOPop1 + "/" + DivideEquityValueVSOPop2 + "/" + DivideEquityValueVSOPop3)
-		console.log("Grant size" + "/" + GrantSizeVSOPop1 + "/" + GrantSizeVSOPop2 + "/" + GrantSizeVSOPop3)
-		console.log("1st year total compensation" + "/" + totalCompensationVSOPop1 + "/" + totalCompensationVSOPop2 + "/" + totalCompensationVSOPop3)
-		console.log("1st year Annual compensation + equity value" + "/" + annualCompensationVSOPop1 + "/" + annualCompensationVSOPop2 + "/" + annualCompensationVSOPop3)
+		
 	}
 	
 	// check
