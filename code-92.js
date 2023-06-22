@@ -206,7 +206,8 @@ const calcData = () => {
 	let locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
 	let maxJobLevel = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
 	const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
-	const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!
+	const locVesting = vestingPeriod.value*1;
+	const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!;
 
 We are thrilled to offer you a position in our team!
 
@@ -336,18 +337,60 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let totalCompensationWEOp1 = grossSalaryOp1 + valueOfOptions1;
 	let totalCompensationWEOp2 = grossSalaryOp2 + valueOfOptions2;
 	let totalCompensationWEOp3 = grossSalaryOp3 + valueOfOptions3;
+
+	//VSOP
+
+	let grossSalaryVSOPOp1 = locAnnualGrossSalary*0.9;
+	let grossSalaryVSOPOp2 = locAnnualGrossSalary;
+	let grossSalaryVSOPOp3 = locAnnualGrossSalary*1.1;
+
+	let grossSalaryMonthlyVSOPOp1 = grossSalaryOp1/12;
+	let grossSalaryMonthlyVSOPOp2 = grossSalaryOp2/12;
+	let grossSalaryMonthlyVSOPOp3 = grossSalaryOp3/12;
+
+	let monthlySalaryLossVSOPop1 = grossSalaryMonthlyVSOPOp1 - grossSalaryMonthlyVSOPOp2;
+	let monthlySalaryLossVSOPop3 = grossSalaryMonthlyVSOPOp3 - grossSalaryMonthlyVSOPOp2;
+
+	let annualSalaryLossInEURVSOPop1 = grossSalaryVSOPOp1 - grossSalaryVSOPOp2;
+	let annualSalaryLossInEURVSOPop2 = grossSalaryVSOPOp3 - grossSalaryVSOPOp2;
+
+	let GrantValueVSOP = grossSalaryVSOPOp2 * locJobLevel / 100;
+
+	let GrantValueWithoutBenchmarkVSOP = GrantValueVSOP / locValuation;
+
+	let fixedValueForGrantVSOP = ( GrantValueWithoutBenchmarkVSOP < maxJobLevel ) ? GrantValueWithoutBenchmarkVSOP : maxJobLevel;
+
+	let AnnualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation )
+	let AnnualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop3 / locValuation )
+
+	let GrantSizeVSOPop1 = fixedValueForGrantVSOP + AnnualSalaryLossGainVSOPop1;
+	let GrantSizeVSOPop1 = fixedValueForGrantVSOP
+	let GrantSizeVSOPop1 = fixedValueForGrantVSOP + AnnualSalaryLossGainVSOPop3;
+
+	let GrantValueVSOPop1 = locValuation * GrantSizeVSOPop1 / 100
+	let GrantValueVSOPop2 = locValuation * GrantSizeVSOPop2 / 100
+	let GrantValueVSOPop3 = locValuation * GrantSizeVSOPop3 / 100
+
+	let DivideEquityValueVSOPop1 = GrantValueVSOPop1 / locVesting;
+	let DivideEquityValueVSOPop2 = GrantValueVSOPop2 / locVesting;
+	let DivideEquityValueVSOPop3 = GrantValueVSOPop3 / locVesting;
+
+	let totalCompensationVSOPop1 = DivideEquityValueVSOPop1 + grossSalaryVSOPOp1;
+	let totalCompensationVSOPop2 = DivideEquityValueVSOPop2 + grossSalaryVSOPOp2;
+	let totalCompensationVSOPop3 = DivideEquityValueVSOPop3 + grossSalaryVSOPOp3;
+
+	let annualCompensationVSOPop1 = grossSalaryVSOPOp1 + GrantValueVSOPop1;
+	let annualCompensationVSOPop2 = grossSalaryVSOPOp2 + GrantValueVSOPop2;
+	let annualCompensationVSOPop3 = grossSalaryVSOPOp3 + GrantValueVSOPop3;
 	
 	//checkbox
 
 	if ( typeValue === "VSOP" ) {
-		typeValue = "ESOP";
-		$("input[name=type][value=" + "ESOP" + "]").prop('checked', true);
-		checkboxError.style.display = 'block';
-		checkboxError.style.opacity = 1;
-		setTimeout(function() {
-			checkboxError.style.opacity = 0;
-			checkboxError.style.display = 'none';
-		}, 2000);
+		console.log("Grant value" + "/" + GrantValueVSOPop1 + "/" + GrantValueVSOPop2 + "/" + GrantValueVSOPop3)
+		console.log("Divide equity value into vesting time" + "/" + DivideEquityValueVSOPop1 + "/" + DivideEquityValueVSOPop2 + "/" + DivideEquityValueVSOPop3)
+		console.log("Grant size" + "/" + GrantSizeVSOPop1 + "/" + GrantSizeVSOPop2 + "/" + GrantSizeVSOPo3)
+		console.log("1st year total compensation" + "/" + totalCompensationVSOPop1 + "/" + totalCompensationVSOPop2 + "/" + totalCompensationVSOPop3)
+		console.log("1st year Annual compensation + equity value" + "/" + annualCompensationVSOPop1 + "/" + annualCompensationVSOPop2 + "/" + annualCompensationVSOPop3)
 	}
 	
 	// check
