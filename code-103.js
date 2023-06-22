@@ -389,8 +389,8 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	console.log("annualSalaryLossInEURVSOPop1: " + annualSalaryLossInEURVSOPop1)
 	console.log("annualSalaryLossInEURVSOPop3: " + annualSalaryLossInEURVSOPop3)
 	console.log("locValuation: " + locValuation)
-	let annualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation )
-	let annualSalaryLossGainVSOPop3 = - ( annualSalaryLossInEURVSOPop3 / locValuation )
+	let annualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation ) * 100
+	let annualSalaryLossGainVSOPop3 = - ( annualSalaryLossInEURVSOPop3 / locValuation ) * 100
 	console.log("annualSalaryLossGainVSOPop1: " + annualSalaryLossGainVSOPop1)
 	console.log("annualSalaryLossGainVSOPop3: " + annualSalaryLossGainVSOPop3)
 
