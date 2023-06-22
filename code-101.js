@@ -380,7 +380,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let GrantValueVSOP = grossSalaryVSOPOp2 * locJobLevelVSOP / 100;
 	console.log("GrantValueVSOP: " + GrantValueVSOP)
 
-	let GrantValueWithoutBenchmarkVSOP = GrantValueVSOP / locValuation;
+	let GrantValueWithoutBenchmarkVSOP = ( GrantValueVSOP / locValuation ) * 100;
 
 	console.log("GrantValueWithoutBenchmarkVSOP: " + GrantValueWithoutBenchmarkVSOP)
 
