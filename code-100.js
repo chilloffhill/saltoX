@@ -198,6 +198,8 @@ const calcData = () => {
 	let locValuation;
 	let locJobLevel = jobLevel.value === '' ? 60 : jobLevel.value*1;
 	let maxJobLevel = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
+	let locJobLevelVSOP = jobLevel.value === '' ? 60 : jobLevel.value*1;
+	let maxJobLevelVSOP = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
 	const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
 	const locVesting = vestingPeriod.value*1;
 	const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!;
@@ -214,57 +216,84 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	if ( jobLevel.value === 'junior-1' ){
 		locJobLevel = 60;
 		maxJobLevel = 0.80;
+		
+		locJobLevelVSOP = 60;
+		maxJobLevelVSOP = 0.80;
 	}
 
 	if ( jobLevel.value === 'mid-level-1' ){
 		locJobLevel = 70;
 		maxJobLevel = 1;
+		
+		locJobLevelVSOP = 70;
+		maxJobLevelVSOP = 1;
 	}
 
 	if ( jobLevel.value === 'senior-1' ){
 		locJobLevel = 85;
 		maxJobLevel = 1.2;
+
+		locJobLevelVSOP = 85;
+		maxJobLevelVSOP = 1.2;
 	}
 
 	if ( jobLevel.value === 'junior-2' ){
 		locJobLevel = 40;
 		maxJobLevel = 0.70;
+
+		locJobLevelVSOP = 40;
+		maxJobLevelVSOP = 0.70;
 	}
 
 	if ( jobLevel.value === 'mid-level-2' ){
 		locJobLevel = 50;
 		maxJobLevel = 0.90;
+
+		locJobLevelVSOP = 50;
+		maxJobLevelVSOP = 0.90;
 	}
 
 	if ( jobLevel.value === 'senior-2' ){
 		locJobLevel = 65;
 		maxJobLevel = 1.10;
+
+		locJobLevelVSOP = 65;
+		maxJobLevelVSOP = 1.10;
 	}
 
 	if ( jobLevel.value === 'junior-3' ){
 		locJobLevel = 40;
 		maxJobLevel = 0.65;
+
+		locJobLevelVSOP = 40;
+		maxJobLevelVSOP = 0.65;
 	}
 
 	if ( jobLevel.value === 'mid-level-3' ){
 		locJobLevel = 50;
 		maxJobLevel = 0.85;
+
+		locJobLevelVSOP = 50;
+		maxJobLevelVSOP = 0.85;
 	}
 
 	if ( jobLevel.value === 'senior-3' ){
 		locJobLevel = 65;
 		maxJobLevel = 1.05;
+
+		locJobLevelVSOP = 65;
+		maxJobLevelVSOP = 1.05;
 	}
 	
 	if (valuation.value === 'custom') {
-	locValuation = customValuation.value;
-	customValuation.style.display = 'block';
-	locValuation = customValuation.value === '' ? 1500000 : customValuation.value.replace(/[^0-9.]/g, '')*1;
+		locValuation = customValuation.value;
+		customValuation.style.display = 'block';
+		locValuation = customValuation.value === '' ? 1500000 : customValuation.value.replace(/[^0-9.]/g, '')*1;
 
 	} else{
-	customValuation.style.display = 'none';
-	customValuation.value = '';
-	locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
+		customValuation.style.display = 'none';
+		customValuation.value = '';
+		locValuation = valuation.value === '' ? 1000000 : valuation.value*1;
 	}
 
 	if (valuation.value === ''){
@@ -347,15 +376,15 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let annualSalaryLossInEURVSOPop3 = grossSalaryVSOPOp3 - grossSalaryVSOPOp2;
 
 	console.log("grossSalaryVSOPOp2: " + grossSalaryVSOPOp2)
-	console.log("locJobLevel: " + locJobLevel)
-	let GrantValueVSOP = grossSalaryVSOPOp2 * locJobLevel / 100;
+	console.log("locJobLevelVSOP: " + locJobLevelVSOP)
+	let GrantValueVSOP = grossSalaryVSOPOp2 * locJobLevelVSOP / 100;
 	console.log("GrantValueVSOP: " + GrantValueVSOP)
 
 	let GrantValueWithoutBenchmarkVSOP = GrantValueVSOP / locValuation;
 
 	console.log("GrantValueWithoutBenchmarkVSOP: " + GrantValueWithoutBenchmarkVSOP)
 
-	let fixedValueForGrantVSOP = ( GrantValueWithoutBenchmarkVSOP < maxJobLevel ) ? GrantValueWithoutBenchmarkVSOP : maxJobLevel;
+	let fixedValueForGrantVSOP = ( GrantValueWithoutBenchmarkVSOP < maxJobLevelVSOP ) ? GrantValueWithoutBenchmarkVSOP : maxJobLevelVSOP;
 
 	let annualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation )
 	let annualSalaryLossGainVSOPop3 = - ( annualSalaryLossInEURVSOPop3 / locValuation )
