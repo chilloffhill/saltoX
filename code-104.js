@@ -397,26 +397,37 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let GrantSizeVSOPop1 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop1;
 	let GrantSizeVSOPop2 = fixedValueForGrantVSOP
 	let GrantSizeVSOPop3 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop3;
+	console.log("GrantSizeVSOPop1: " + GrantSizeVSOPop1)
+	console.log("GrantSizeVSOPop2: " + GrantSizeVSOPop2)
+	console.log("GrantSizeVSOPop3: " + GrantSizeVSOPop3)
 
-	console.log('GrantSizeVSOPop1:' + GrantSizeVSOPop1)
-	console.log(GrantSizeVSOPop2)
-	console.log(GrantSizeVSOPop3)
-
-	let GrantValueVSOPop1 = locValuation * GrantSizeVSOPop1 / 100
-	let GrantValueVSOPop2 = locValuation * GrantSizeVSOPop2 / 100
-	let GrantValueVSOPop3 = locValuation * GrantSizeVSOPop3 / 100
+	let GrantValueVSOPop1 = locValuation * GrantSizeVSOPop1 / 100;
+	let GrantValueVSOPop2 = locValuation * GrantSizeVSOPop2 / 100;
+	let GrantValueVSOPop3 = locValuation * GrantSizeVSOPop3 / 100;
+	console.log("GrantValueVSOPop1: " + GrantValueVSOPop1)
+	console.log("GrantValueVSOPop2: " + GrantValueVSOPop2)
+	console.log("GrantValueVSOPop3: " + GrantValueVSOPop3)
 
 	let DivideEquityValueVSOPop1 = GrantValueVSOPop1 / locVesting;
 	let DivideEquityValueVSOPop2 = GrantValueVSOPop2 / locVesting;
 	let DivideEquityValueVSOPop3 = GrantValueVSOPop3 / locVesting;
+	console.log("DivideEquityValueVSOPop1: " + DivideEquityValueVSOPop1)
+	console.log("DivideEquityValueVSOPop2: " + DivideEquityValueVSOPop2)
+	console.log("DivideEquityValueVSOPop3: " + DivideEquityValueVSOPop3)
 
 	let totalCompensationVSOPop1 = DivideEquityValueVSOPop1 + grossSalaryVSOPOp1;
 	let totalCompensationVSOPop2 = DivideEquityValueVSOPop2 + grossSalaryVSOPOp2;
 	let totalCompensationVSOPop3 = DivideEquityValueVSOPop3 + grossSalaryVSOPOp3;
+	console.log("totalCompensationVSOPop1: " + totalCompensationVSOPop1)
+	console.log("totalCompensationVSOPop2: " + totalCompensationVSOPop2)
+	console.log("totalCompensationVSOPop3: " + totalCompensationVSOPop3)
 
 	let annualCompensationVSOPop1 = grossSalaryVSOPOp1 + GrantValueVSOPop1;
 	let annualCompensationVSOPop2 = grossSalaryVSOPOp2 + GrantValueVSOPop2;
 	let annualCompensationVSOPop3 = grossSalaryVSOPOp3 + GrantValueVSOPop3;
+	console.log("annualCompensationVSOPop1: " + annualCompensationVSOPop1)
+	console.log("annualCompensationVSOPop2: " + annualCompensationVSOPop2)
+	console.log("annualCompensationVSOPop3: " + annualCompensationVSOPop3)
 	
 	//checkbox
 
