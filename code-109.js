@@ -142,6 +142,12 @@ const t2RowLabel3 = document.getElementById('t-2-label-row-3');
 const t2RowLabel4 = document.getElementById('t-2-label-row-4');
 const t2RowLabel5 = document.getElementById('t-2-label-row-5');
 
+const t3RowLabel1 = document.getElementById('t-3-label-row-1');
+const t3RowLabel2 = document.getElementById('t-3-label-row-2');
+const t3RowLabel3 = document.getElementById('t-3-label-row-3');
+const t3RowLabel4 = document.getElementById('t-3-label-row-4');
+const t3RowLabel5 = document.getElementById('t-3-label-row-5');
+
 calcTableLowError.style.display = "none";
 calcTableLowError.style.opacity = "0";
 
@@ -453,6 +459,12 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		t2RowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
 		t2RowLabel5.textContent = 'Current estimated value of options';
 
+		t3RowLabel1.textContent = 'Gross salary annually';
+		t3RowLabel2.textContent = 'Virtual options';
+		t3RowLabel3.textContent = 'as % of future company value';
+		t3RowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
+		t3RowLabel5.textContent = 'Current estimated value of options';
+
 		// set table
 
 		setCellValue("gross-salary-op-1", '€' + Math.floor(grantValueVSOPop1));
@@ -496,6 +508,28 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationVSOPop1));
 		setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationVSOPop2));
 		setCellValue("t-2-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationVSOPop3));
+
+		// mobile
+
+		setCellValue("t-3-gross-salary-op-1", '€' + Math.floor(grantValueVSOPop1));
+		setCellValue("t-3-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
+		setCellValue("t-3-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
+	
+		setCellValue("t-3-company-options-op-1", '€' + Math.floor(divideEquityValueVSOPop1));
+		setCellValue("t-3-company-options-op-2", '€' + Math.floor(divideEquityValueVSOPop2));
+		setCellValue("t-3-company-options-op-3", '€' + Math.floor(divideEquityValueVSOPop3));
+	
+		setCellValue("t-3-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
+		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
+		setCellValue("t-3-value-of-options-op-3", '€' + Math.round(annualCompensationVSOPop3));
+	
+		setCellValue("t-3-share-capital-op-1", grantSizeVSOPop1.toFixed(2) + '%');
+		setCellValue("t-3-share-capital-op-2", grantSizeVSOPop2.toFixed(2) + '%');
+		setCellValue("t-3-share-capital-op-3", grantSizeVSOPop3.toFixed(2) + '%');
+	
+		setCellValue("t-3-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationVSOPop1));
+		setCellValue("t-3-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationVSOPop2));
+		setCellValue("t-3-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationVSOPop3));
 
 		// cms
 
@@ -545,6 +579,12 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		t2RowLabel3.textContent = 'as % of share capital';
 		t2RowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
 		t2RowLabel5.textContent = 'Current estimated value of options';
+
+		t3RowLabel1.textContent = 'Gross salary annually';
+		t3RowLabel2.textContent = 'Company options';
+		t3RowLabel3.textContent = 'as % of share capital';
+		t3RowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
+		t3RowLabel5.textContent = 'Current estimated value of options';
 		
 		// set table
 
@@ -589,6 +629,28 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
 		setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
 		setCellValue("t-2-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
+
+		// mobile
+
+		setCellValue("t-3-gross-salary-op-1", '€' + Math.round(grossSalaryOp1));
+		setCellValue("t-3-gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
+		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
+	
+		setCellValue("t-3-company-options-op-1", Math.round(companyOptions1));
+		setCellValue("t-3-company-options-op-2", Math.round(companyOptions2));
+		setCellValue("t-3-company-options-op-3", Math.round(companyOptions3));
+	
+		setCellValue("t-3-value-of-options-op-1", '€' + Math.round(valueOfOptions1));
+		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(valueOfOptions2));
+		setCellValue("t-3-value-of-options-op-3", '€' + Math.round(valueOfOptions3));
+	
+		setCellValue("t-3-share-capital-op-1", shareCapitalOp1.toFixed(2) + '%');
+		setCellValue("t-3-share-capital-op-2", shareCapitalOp2.toFixed(2) + '%');
+		setCellValue("t-3-share-capital-op-3", shareCapitalOp3.toFixed(2) + '%');
+	
+		setCellValue("t-3-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationWEOp1));
+		setCellValue("t-3-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationWEOp2));
+		setCellValue("t-3-total-compensation-w-e-op-3", '€' + Math.round(totalCompensationWEOp3));
 	
 		// cms
 	
