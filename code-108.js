@@ -1,5 +1,6 @@
 var myChart = echarts.init(document.getElementById('lineGraph'));
 var myChart2 = echarts.init(document.getElementById('lineGraph2'));
+var myChart3 = echarts.init(document.getElementById('lineGraph3'));
 
 function allowOnlyNumbers(inputElement) {
     inputElement.addEventListener('input', () => {
@@ -673,6 +674,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	]
 	myChart.setOption(option, true);
 	myChart2.setOption(option, true);
+	myChart3.setOption(option, true);
 }
 
 //form elements update events
