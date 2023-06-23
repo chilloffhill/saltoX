@@ -471,9 +471,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("gross-salary-op-2", '€' + Math.floor(grantValueVSOPop2));
 		setCellValue("gross-salary-op-3", '€' + Math.floor(grantValueVSOPop3));
 	
-		setCellValue("company-options-op-1", '€' + Math.floor(divideEquityValueVSOPop1));
-		setCellValue("company-options-op-2", '€' + Math.floor(divideEquityValueVSOPop2));
-		setCellValue("company-options-op-3", '€' + Math.floor(divideEquityValueVSOPop3));
+		setCellValue("company-options-op-1", Math.floor(divideEquityValueVSOPop1));
+		setCellValue("company-options-op-2", Math.floor(divideEquityValueVSOPop2));
+		setCellValue("company-options-op-3", Math.floor(divideEquityValueVSOPop3));
 	
 		setCellValue("value-of-options-op-1", '€' + Math.floor(annualCompensationVSOPop1));
 		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop1));
@@ -493,9 +493,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
 		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
 	
-		setCellValue("t-2-company-options-op-1", '€' + Math.floor(divideEquityValueVSOPop1));
-		setCellValue("t-2-company-options-op-2", '€' + Math.floor(divideEquityValueVSOPop2));
-		setCellValue("t-2-company-options-op-3", '€' + Math.floor(divideEquityValueVSOPop3));
+		setCellValue("t-2-company-options-op-1", Math.floor(divideEquityValueVSOPop1));
+		setCellValue("t-2-company-options-op-2", Math.floor(divideEquityValueVSOPop2));
+		setCellValue("t-2-company-options-op-3", Math.floor(divideEquityValueVSOPop3));
 	
 		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
@@ -515,9 +515,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-3-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
 		setCellValue("t-3-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
 	
-		setCellValue("t-3-company-options-op-1", '€' + Math.floor(divideEquityValueVSOPop1));
-		setCellValue("t-3-company-options-op-2", '€' + Math.floor(divideEquityValueVSOPop2));
-		setCellValue("t-3-company-options-op-3", '€' + Math.floor(divideEquityValueVSOPop3));
+		setCellValue("t-3-company-options-op-1", Math.floor(divideEquityValueVSOPop1));
+		setCellValue("t-3-company-options-op-2", Math.floor(divideEquityValueVSOPop2));
+		setCellValue("t-3-company-options-op-3", Math.floor(divideEquityValueVSOPop3));
 	
 		setCellValue("t-3-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
