@@ -416,6 +416,13 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	console.log('grantSizeVSOPop1: ' + grantSizeVSOPop1)
 	console.log('VSOPSharesOp1: ' + VSOPSharesOp1)
 
+	let GrantSizeRounddownOp1 = ( Math.floor(VSOPSharesOp1) / VSOPshares ) * 100;
+	let GrantSizeRounddownOp2 = ( Math.floor(VSOPSharesOp2) / VSOPshares ) * 100;
+	let GrantSizeRounddownOp3 = ( Math.floor(VSOPSharesOp3) / VSOPshares ) * 100;
+	console.log(GrantSizeRounddownOp1)
+	console.log(GrantSizeRounddownOp2)
+	console.log(GrantSizeRounddownOp3)
+
 	let grantValueVSOPop1 = locValuation * grantSizeVSOPop1 / 100;
 	let grantValueVSOPop2 = locValuation * grantSizeVSOPop2 / 100;
 	let grantValueVSOPop3 = locValuation * grantSizeVSOPop3 / 100;
