@@ -413,6 +413,8 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let VSOPSharesOp2 = ( totalShares * grantSizeVSOPop2 ) / 100;
 	let VSOPSharesOp3 = ( totalShares * grantSizeVSOPop3 ) / 100;
 
+	console.log('VSOPSharesOp1: ' + VSOPSharesOp1)
+
 	let grantValueVSOPop1 = locValuation * grantSizeVSOPop1 / 100;
 	let grantValueVSOPop2 = locValuation * grantSizeVSOPop2 / 100;
 	let grantValueVSOPop3 = locValuation * grantSizeVSOPop3 / 100;
@@ -484,7 +486,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	
 		setCellValue("company-options-op-1", Math.floor(VSOPSharesOp1));
 		setCellValue("company-options-op-2", Math.floor(VSOPSharesOp2));
-		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp1));
+		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("value-of-options-op-1", '€' + Math.floor(annualCompensationVSOPop1));
 		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop1));
