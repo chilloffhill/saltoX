@@ -403,16 +403,15 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let annualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation ) * 100;
 	let annualSalaryLossGainVSOPop3 = - ( annualSalaryLossInEURVSOPop3 / locValuation ) * 100;
 
-	let SHARESVSOP = Math.floor( ( ( locShares * locCustomPoolSize ) / ( 100 - locCustomPoolSize ) ) + locShares );
-	console.log(( locShares * locCustomPoolSize ) / ( 100 - locCustomPoolSize ));
-	console.log(locShares * locCustomPoolSize);
-	console.log(100 - locCustomPoolSize);
-	console.log('SHARESVSOP: ' + SHARESVSOP)
+	let totalShares = Math.floor( ( ( locShares * locCustomPoolSize ) / ( 100 - locCustomPoolSize ) ) + locShares );
 
 	let grantSizeVSOPop1 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop1;
 	let grantSizeVSOPop2 = fixedValueForGrantVSOP
 	let grantSizeVSOPop3 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop3;
-	console.log('grantSizeVSOPop1: ' + grantSizeVSOPop1);
+
+	let VSOPSharesOp1 = ( totalShares * grantSizeVSOPop1 ) / 100;
+	let VSOPSharesOp2 = ( totalShares * grantSizeVSOPop2 ) / 100;
+	let VSOPSharesOp3 = ( totalShares * grantSizeVSOPop3 ) / 100;
 
 	let grantValueVSOPop1 = locValuation * grantSizeVSOPop1 / 100;
 	let grantValueVSOPop2 = locValuation * grantSizeVSOPop2 / 100;
@@ -483,9 +482,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("gross-salary-op-2", '€' + Math.floor(grantValueVSOPop2));
 		setCellValue("gross-salary-op-3", '€' + Math.floor(grantValueVSOPop3));
 	
-		setCellValue("company-options-op-1", Math.floor(divideEquityValueVSOPop1));
-		setCellValue("company-options-op-2", Math.floor(divideEquityValueVSOPop2));
-		setCellValue("company-options-op-3", Math.floor(divideEquityValueVSOPop3));
+		setCellValue("company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp1));
 	
 		setCellValue("value-of-options-op-1", '€' + Math.floor(annualCompensationVSOPop1));
 		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop1));
@@ -505,9 +504,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
 		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
 	
-		setCellValue("t-2-company-options-op-1", Math.floor(divideEquityValueVSOPop1));
-		setCellValue("t-2-company-options-op-2", Math.floor(divideEquityValueVSOPop2));
-		setCellValue("t-2-company-options-op-3", Math.floor(divideEquityValueVSOPop3));
+		setCellValue("t-2-company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("t-2-company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("t-2-company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
@@ -527,9 +526,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-3-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
 		setCellValue("t-3-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
 	
-		setCellValue("t-3-company-options-op-1", Math.floor(divideEquityValueVSOPop1));
-		setCellValue("t-3-company-options-op-2", Math.floor(divideEquityValueVSOPop2));
-		setCellValue("t-3-company-options-op-3", Math.floor(divideEquityValueVSOPop3));
+		setCellValue("t-3-company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("t-3-company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("t-3-company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("t-3-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
@@ -549,9 +548,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		cmsGrossSalaryOp2.value = '€' + Math.round(grantValueVSOPop2)
 		cmsGrossSalaryOp3.value = '€' + Math.round(grantValueVSOPop3)
 	
-		cmsCompanyOptionsOp1.value = '€' + Math.round(divideEquityValueVSOPop1)
-		cmsCompanyOptionsOp2.value = '€' + Math.round(divideEquityValueVSOPop1)
-		cmsCompanyOptionsOp3.value = '€' + Math.round(divideEquityValueVSOPop1)
+		cmsCompanyOptionsOp1.value = '€' + Math.floor(VSOPSharesOp1)
+		cmsCompanyOptionsOp2.value = '€' + Math.floor(VSOPSharesOp2)
+		cmsCompanyOptionsOp3.value = '€' + Math.floor(VSOPSharesOp3)
 	
 		cmsShareCapitalOp1.value = grantSizeVSOPop1.toFixed(2) + '%'
 		cmsShareCapitalOp2.value = grantSizeVSOPop2.toFixed(2) + '%'
