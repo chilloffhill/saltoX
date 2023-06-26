@@ -400,8 +400,11 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 
 	let fixedValueForGrantVSOP = ( GrantValueWithoutBenchmarkVSOP < maxJobLevelVSOP ) ? GrantValueWithoutBenchmarkVSOP : maxJobLevelVSOP;
 
-	let annualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation ) * 100
-	let annualSalaryLossGainVSOPop3 = - ( annualSalaryLossInEURVSOPop3 / locValuation ) * 100
+	let annualSalaryLossGainVSOPop1 = - ( annualSalaryLossInEURVSOPop1 / locValuation ) * 100;
+	let annualSalaryLossGainVSOPop3 = - ( annualSalaryLossInEURVSOPop3 / locValuation ) * 100;
+
+	let SHARESVSOP = Math.floor( ( ( locShares * locCustomPoolSize ) / ( 1 - locCustomPoolSize ) ) + locShares );
+	console.log('SHARESVSOP: ' + SHARESVSOP)
 
 	let grantSizeVSOPop1 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop1;
 	let grantSizeVSOPop2 = fixedValueForGrantVSOP
