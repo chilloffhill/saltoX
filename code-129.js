@@ -430,16 +430,14 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let divideEquityValueVSOPop3 = grantValueVSOPop3 / locVesting;
 	console.log('divideEquityValueVSOPop1: ' + divideEquityValueVSOPop1);
 
-	let totalCompensationVSOPop1 = divideEquityValueVSOPop1 + grossSalaryVSOPOp1;
-	let totalCompensationVSOPop2 = divideEquityValueVSOPop2 + grossSalaryVSOPOp2;
-	let totalCompensationVSOPop3 = divideEquityValueVSOPop3 + grossSalaryVSOPOp3;
-	console.log('totalCompensationVSOPop1: ' + totalCompensationVSOPop1);
-
 	let annualCompensationVSOPop1 = ( locValuation * grantSizeRounddownOp1 ) / 100;
 	let annualCompensationVSOPop2 = ( locValuation * grantSizeRounddownOp2 ) / 100;
 	let annualCompensationVSOPop3 = ( locValuation * grantSizeRounddownOp3 ) / 100;
-	console.log('annualCompensationVSOPop1: ' + annualCompensationVSOPop1);
-	
+
+	let totalCompensationVSOPop1 = annualCompensationVSOPop1 + grossSalaryVSOPOp1;
+	let totalCompensationVSOPop2 = annualCompensationVSOPop2 + grossSalaryVSOPOp2;
+	let totalCompensationVSOPop3 = annualCompensationVSOPop3 + grossSalaryVSOPOp3;
+	console.log('totalCompensationVSOPop1: ' + totalCompensationVSOPop1);
 	
 	// check
 
