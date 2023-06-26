@@ -406,22 +406,28 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let grantSizeVSOPop1 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop1;
 	let grantSizeVSOPop2 = fixedValueForGrantVSOP
 	let grantSizeVSOPop3 = fixedValueForGrantVSOP + annualSalaryLossGainVSOPop3;
+	console.log('grantSizeVSOPop1: ' + grantSizeVSOPop1);
 
 	let grantValueVSOPop1 = locValuation * grantSizeVSOPop1 / 100;
 	let grantValueVSOPop2 = locValuation * grantSizeVSOPop2 / 100;
 	let grantValueVSOPop3 = locValuation * grantSizeVSOPop3 / 100;
+	console.log('grantValueVSOPop1: ' + grantValueVSOPop1);
 
 	let divideEquityValueVSOPop1 = grantValueVSOPop1 / locVesting;
 	let divideEquityValueVSOPop2 = grantValueVSOPop2 / locVesting;
 	let divideEquityValueVSOPop3 = grantValueVSOPop3 / locVesting;
+	console.log('divideEquityValueVSOPop1: ' + divideEquityValueVSOPop1);
 
 	let totalCompensationVSOPop1 = divideEquityValueVSOPop1 + grossSalaryVSOPOp1;
 	let totalCompensationVSOPop2 = divideEquityValueVSOPop2 + grossSalaryVSOPOp2;
 	let totalCompensationVSOPop3 = divideEquityValueVSOPop3 + grossSalaryVSOPOp3;
+	console.log('totalCompensationVSOPop1: ' + totalCompensationVSOPop1);
 
 	let annualCompensationVSOPop1 = grossSalaryVSOPOp1 + grantValueVSOPop1;
 	let annualCompensationVSOPop2 = grossSalaryVSOPOp2 + grantValueVSOPop2;
 	let annualCompensationVSOPop3 = grossSalaryVSOPOp3 + grantValueVSOPop3;
+	console.log('annualCompensationVSOPop1: ' + annualCompensationVSOPop1);
+	
 	
 	// check
 
