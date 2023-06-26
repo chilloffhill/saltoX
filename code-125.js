@@ -435,9 +435,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	let totalCompensationVSOPop3 = divideEquityValueVSOPop3 + grossSalaryVSOPOp3;
 	console.log('totalCompensationVSOPop1: ' + totalCompensationVSOPop1);
 
-	let annualCompensationVSOPop1 = grossSalaryVSOPOp1 + grantValueVSOPop1;
-	let annualCompensationVSOPop2 = grossSalaryVSOPOp2 + grantValueVSOPop2;
-	let annualCompensationVSOPop3 = grossSalaryVSOPOp3 + grantValueVSOPop3;
+	let annualCompensationVSOPop1 = locValuation * grantSizeRounddownOp1;
+	let annualCompensationVSOPop2 = locValuation * grantSizeRounddownOp2;
+	let annualCompensationVSOPop3 = locValuation * grantSizeRounddownOp3;
 	console.log('annualCompensationVSOPop1: ' + annualCompensationVSOPop1);
 	
 	
@@ -517,7 +517,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	
 		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
-		setCellValue("t-2-value-of-options-op-3", '€' + Math.round(annualCompensationVSOPop3));
+		setCellValue("t-2-value-of-options-op-3", '€' + Math.round());
 	
 		setCellValue("t-2-share-capital-op-1", grantSizeRounddownOp1.toFixed(2) + '%');
 		setCellValue("t-2-share-capital-op-2", grantSizeRounddownOp2.toFixed(2) + '%');
@@ -539,7 +539,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	
 		setCellValue("t-3-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
-		setCellValue("t-3-value-of-options-op-3", '€' + Math.round(annualCompensationVSOPop3));
+		setCellValue("t-3-value-of-options-op-3", '€' + Math.round());
 	
 		setCellValue("t-3-share-capital-op-1", grantSizeRounddownOp1.toFixed(2) + '%');
 		setCellValue("t-3-share-capital-op-2", grantSizeRounddownOp2.toFixed(2) + '%');
@@ -567,7 +567,7 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	
 		cmsGraphOp1.value = Math.round(annualCompensationVSOPop1)
 		cmsGraphOp4.value = Math.round(annualCompensationVSOPop2)
-		cmsGraphOp3.value = Math.round(annualCompensationVSOPop3)
+		cmsGraphOp3.value = Math.round()
 	
 		cmsTotalCompensationWEOp1.value = '€' + Math.round(totalCompensationVSOPop1)
 		cmsTotalCompensationWEOp2.value = '€' + Math.round(totalCompensationVSOPop2)
@@ -575,13 +575,13 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	
 		cmsValueOfOptionsOp1.value = '€' + Math.round(annualCompensationVSOPop1)
 		cmsValueOfOptionsOp2.value = '€' + Math.round(annualCompensationVSOPop2)
-		cmsValueOfOptionsOp3.value = '€' + Math.round(annualCompensationVSOPop3)
+		cmsValueOfOptionsOp3.value = '€' + Math.round()
 	
 		setCellValue("message-text", loccalCulatorMessage);
 	
 		graphVal1 = Math.round(annualCompensationVSOPop1)
 		graphVal2 = Math.round(annualCompensationVSOPop2)
-		graphVal3 = Math.round(annualCompensationVSOPop3)
+		graphVal3 = Math.round()
 		
 	}else{
 		// set rows labels
