@@ -416,12 +416,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 	console.log('grantSizeVSOPop1: ' + grantSizeVSOPop1)
 	console.log('VSOPSharesOp1: ' + VSOPSharesOp1)
 
-	let GrantSizeRounddownOp1 = ( Math.floor(VSOPSharesOp1) / VSOPshares ) * 100;
-	let GrantSizeRounddownOp2 = ( Math.floor(VSOPSharesOp2) / VSOPshares ) * 100;
-	let GrantSizeRounddownOp3 = ( Math.floor(VSOPSharesOp3) / VSOPshares ) * 100;
-	console.log( Math.floor(VSOPSharesOp1) );
-	console.log( VSOPshares )
-	console.log(GrantSizeRounddownOp1)
+	let grantSizeRounddownOp1 = ( Math.floor(VSOPSharesOp1) / VSOPshares ) * 100;
+	let grantSizeRounddownOp2 = ( Math.floor(VSOPSharesOp2) / VSOPshares ) * 100;
+	let grantSizeRounddownOp3 = ( Math.floor(VSOPSharesOp3) / VSOPshares ) * 100;
 
 	let grantValueVSOPop1 = locValuation * grantSizeVSOPop1 / 100;
 	let grantValueVSOPop2 = locValuation * grantSizeVSOPop2 / 100;
@@ -500,9 +497,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop1));
 		setCellValue("value-of-options-op-3", '€' + Math.floor(annualCompensationVSOPop1));
 	
-		setCellValue("share-capital-op-1", grantSizeVSOPop1.toFixed(2) + '%');
-		setCellValue("share-capital-op-2", grantSizeVSOPop2.toFixed(2) + '%');
-		setCellValue("share-capital-op-3", grantSizeVSOPop3.toFixed(2) + '%');
+		setCellValue("share-capital-op-1", grantSizeRounddownOp1.toFixed(2) + '%');
+		setCellValue("share-capital-op-2", grantSizeRounddownOp2.toFixed(2) + '%');
+		setCellValue("share-capital-op-3", grantSizeRounddownOp3.toFixed(2) + '%');
 	
 		setCellValue("total-compensation-w-e-op-1", '€' + Math.floor(totalCompensationVSOPop1));
 		setCellValue("total-compensation-w-e-op-2", '€' + Math.floor(totalCompensationVSOPop2));
@@ -522,9 +519,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
 		setCellValue("t-2-value-of-options-op-3", '€' + Math.round(annualCompensationVSOPop3));
 	
-		setCellValue("t-2-share-capital-op-1", grantSizeVSOPop1.toFixed(2) + '%');
-		setCellValue("t-2-share-capital-op-2", grantSizeVSOPop2.toFixed(2) + '%');
-		setCellValue("t-2-share-capital-op-3", grantSizeVSOPop3.toFixed(2) + '%');
+		setCellValue("t-2-share-capital-op-1", grantSizeRounddownOp1.toFixed(2) + '%');
+		setCellValue("t-2-share-capital-op-2", grantSizeRounddownOp2.toFixed(2) + '%');
+		setCellValue("t-2-share-capital-op-3", grantSizeRounddownOp3.toFixed(2) + '%');
 	
 		setCellValue("t-2-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationVSOPop1));
 		setCellValue("t-2-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationVSOPop2));
@@ -544,9 +541,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
 		setCellValue("t-3-value-of-options-op-3", '€' + Math.round(annualCompensationVSOPop3));
 	
-		setCellValue("t-3-share-capital-op-1", grantSizeVSOPop1.toFixed(2) + '%');
-		setCellValue("t-3-share-capital-op-2", grantSizeVSOPop2.toFixed(2) + '%');
-		setCellValue("t-3-share-capital-op-3", grantSizeVSOPop3.toFixed(2) + '%');
+		setCellValue("t-3-share-capital-op-1", grantSizeRounddownOp1.toFixed(2) + '%');
+		setCellValue("t-3-share-capital-op-2", grantSizeRounddownOp2.toFixed(2) + '%');
+		setCellValue("t-3-share-capital-op-3", grantSizeRounddownOp3.toFixed(2) + '%');
 	
 		setCellValue("t-3-total-compensation-w-e-op-1", '€' + Math.round(totalCompensationVSOPop1));
 		setCellValue("t-3-total-compensation-w-e-op-2", '€' + Math.round(totalCompensationVSOPop2));
@@ -562,9 +559,9 @@ You can read more about equity compensation pros and cons at` : calculatorMessag
 		cmsCompanyOptionsOp2.value = '€' + Math.floor(VSOPSharesOp2)
 		cmsCompanyOptionsOp3.value = '€' + Math.floor(VSOPSharesOp3)
 	
-		cmsShareCapitalOp1.value = grantSizeVSOPop1.toFixed(2) + '%'
-		cmsShareCapitalOp2.value = grantSizeVSOPop2.toFixed(2) + '%'
-		cmsShareCapitalOp3.value = grantSizeVSOPop3.toFixed(2) + '%'
+		cmsShareCapitalOp1.value = grantSizeRounddownOp1.toFixed(2) + '%'
+		cmsShareCapitalOp2.value = grantSizeRounddownOp2.toFixed(2) + '%'
+		cmsShareCapitalOp3.value = grantSizeRounddownOp3.toFixed(2) + '%'
 	
 		cmsCulcM.value = loccalCulatorMessage;
 	
