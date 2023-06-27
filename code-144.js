@@ -524,9 +524,9 @@ const calcData = () => {
 		cmsGrossSalaryOp2.value = '€' + Math.round(grantValueVSOPop2)
 		cmsGrossSalaryOp3.value = '€' + Math.round(grantValueVSOPop3)
 	
-		cmsCompanyOptionsOp1.value = '€' + Math.floor(VSOPSharesOp1)
-		cmsCompanyOptionsOp2.value = '€' + Math.floor(VSOPSharesOp2)
-		cmsCompanyOptionsOp3.value = '€' + Math.floor(VSOPSharesOp3)
+		cmsCompanyOptionsOp1.value = Math.floor(VSOPSharesOp1)
+		cmsCompanyOptionsOp2.value = Math.floor(VSOPSharesOp2)
+		cmsCompanyOptionsOp3.value = Math.floor(VSOPSharesOp3)
 	
 		cmsShareCapitalOp1.value = grantSizeRounddownOp1.toFixed(2) + '%'
 		cmsShareCapitalOp2.value = grantSizeRounddownOp2.toFixed(2) + '%'
