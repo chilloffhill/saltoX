@@ -62,7 +62,6 @@ const placeholder = calculatorMessage.getAttribute('placeholder');
 const formattedPlaceholder = placeholder.replace(/is__next-line/g, `
 
 `);
-console.log(formattedPlaceholder);
 calculatorMessage.setAttribute('placeholder', formattedPlaceholder);
 
 
@@ -135,10 +134,6 @@ calcTableLowError.style.opacity = "0";
 
 const esopElements = document.querySelectorAll('.is--esop-display');
 const vsopElements = document.querySelectorAll('.is--vsop-display');
-console.log(esopElements)
-console.log(esopElements[0])
-console.log(vsopElements)
-console.log(vsopElements[0])
 
 option = {
     title: {
@@ -405,9 +400,6 @@ const calcData = () => {
 	let VSOPSharesOp1 = ( VSOPshares * grantSizeVSOPop1 ) / 100;
 	let VSOPSharesOp2 = ( VSOPshares * grantSizeVSOPop2 ) / 100;
 	let VSOPSharesOp3 = ( VSOPshares * grantSizeVSOPop3 ) / 100;
-	console.log('VSOPshares: ' + VSOPshares)
-	console.log('grantSizeVSOPop1: ' + grantSizeVSOPop1)
-	console.log('VSOPSharesOp1: ' + VSOPSharesOp1)
 
 	let grantSizeRounddownOp1 = ( Math.floor(VSOPSharesOp1) / VSOPshares ) * 100;
 	let grantSizeRounddownOp2 = ( Math.floor(VSOPSharesOp2) / VSOPshares ) * 100;
@@ -416,12 +408,10 @@ const calcData = () => {
 	let grantValueVSOPop1 = locValuation * grantSizeVSOPop1 / 100;
 	let grantValueVSOPop2 = locValuation * grantSizeVSOPop2 / 100;
 	let grantValueVSOPop3 = locValuation * grantSizeVSOPop3 / 100;
-	console.log('grantValueVSOPop1: ' + grantValueVSOPop1);
 
 	let divideEquityValueVSOPop1 = grantValueVSOPop1 / locVesting;
 	let divideEquityValueVSOPop2 = grantValueVSOPop2 / locVesting;
 	let divideEquityValueVSOPop3 = grantValueVSOPop3 / locVesting;
-	console.log('divideEquityValueVSOPop1: ' + divideEquityValueVSOPop1);
 
 	let annualCompensationVSOPop1 = ( locValuation * grantSizeRounddownOp1 ) / 100;
 	let annualCompensationVSOPop2 = ( locValuation * grantSizeRounddownOp2 ) / 100;
@@ -430,7 +420,6 @@ const calcData = () => {
 	let totalCompensationVSOPop1 = annualCompensationVSOPop1 + grossSalaryVSOPOp1;
 	let totalCompensationVSOPop2 = annualCompensationVSOPop2 + grossSalaryVSOPOp2;
 	let totalCompensationVSOPop3 = annualCompensationVSOPop3 + grossSalaryVSOPOp3;
-	console.log('totalCompensationVSOPop1: ' + totalCompensationVSOPop1);
 	
 	// check
 
