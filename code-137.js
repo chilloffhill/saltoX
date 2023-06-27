@@ -221,14 +221,18 @@ const calcData = () => {
 	let maxJobLevelVSOP = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
 	const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
 	const locVesting = vestingPeriod.value*1;
-	const loccalCulatorMessage = calculatorMessage.value === '' ? `Hey!;
+	let loccalCulatorMessage;
+	if (calculatorMessage.value === ''){
+		document.getElementById('message-text-default').style.display = 'block';
+		document.getElementById('message-text').style.display = 'none';
 
-We are thrilled to offer you a position in our team!
+		loccalCulatorMessage = ``;
+	}else{
+		document.getElementById('message-text-default').style.display = 'none';
+		document.getElementById('message-text').style.display = 'block';
 
-We would like to offer you a choice between three exciting compensation packages (salary and equity). The options have a 4 year vesting schedule with a 1 year cliff.
-
-You can read more about equity compensation pros and cons at` : calculatorMessage.value;
-	
+		loccalCulatorMessage = calculatorMessage.value;
+	}
     
 	curMessage = loccalCulatorMessage;
 
