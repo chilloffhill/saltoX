@@ -135,6 +135,10 @@ calcTableLowError.style.opacity = "0";
 
 const esopElements = document.getElementsByClassName('is--ESOP-display');
 const vsopElements = document.getElementsByClassName('is--VSOP-display');
+console.log(esopElements)
+console.log(esopElements[0])
+console.log(vsopElements)
+console.log(vsopElements[0])
 
 option = {
     title: {
