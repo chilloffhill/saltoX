@@ -59,9 +59,9 @@ const dropdownValuationLabel = document.getElementById("dropdown-valuation-label
 const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label");
 
 const placeholder = calculatorMessage.getAttribute('placeholder');
-const formattedPlaceholder = placeholder.replace(/\n/g, '<br>');
-  console.log(formattedPlaceholder);
-  textarea.setAttribute('placeholder', formattedPlaceholder);
+const formattedPlaceholder = placeholder.replace(/\n/g, '123');
+console.log(formattedPlaceholder);
+calculatorMessage.setAttribute('placeholder', formattedPlaceholder);
 
 
 let typeValue = "ESOP";
