@@ -133,8 +133,8 @@ const cliffPeriodData = document.getElementById("cliff-period-data");
 calcTableLowError.style.display = "none";
 calcTableLowError.style.opacity = "0";
 
-const esopElements = document.querySelectorAll('.is--ESOP-display');
-const vsopElements = document.querySelectorAll('.is--VSOP-display');
+const esopElements = document.querySelectorAll('.is--esop-display');
+const vsopElements = document.querySelectorAll('.is--vsop-display');
 console.log(esopElements)
 console.log(esopElements[0])
 console.log(vsopElements)
