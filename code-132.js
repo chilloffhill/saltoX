@@ -61,6 +61,7 @@ const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label"
 const placeholder = calculatorMessage.getAttribute('placeholder');
 if (placeholder.includes('\n')) {
   const formattedPlaceholder = placeholder.replace(/\n/g, '<br>');
+  console.log(formattedPlaceholder);
   textarea.setAttribute('placeholder', formattedPlaceholder);
 }
 
