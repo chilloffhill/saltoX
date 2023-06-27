@@ -130,26 +130,11 @@ const annualGrossSalaryData = document.getElementById("annual-gross-salary-data"
 const vestingPeriodData = document.getElementById("vesting-period-data");
 const cliffPeriodData = document.getElementById("cliff-period-data");
 
-const rowLabel1 = document.getElementById('label-row-1');
-const rowLabel2 = document.getElementById('label-row-2');
-const rowLabel3 = document.getElementById('label-row-3');
-const rowLabel4 = document.getElementById('label-row-4');
-const rowLabel5 = document.getElementById('label-row-5');
-
-const t2RowLabel1 = document.getElementById('t-2-label-row-1');
-const t2RowLabel2 = document.getElementById('t-2-label-row-2');
-const t2RowLabel3 = document.getElementById('t-2-label-row-3');
-const t2RowLabel4 = document.getElementById('t-2-label-row-4');
-const t2RowLabel5 = document.getElementById('t-2-label-row-5');
-
-const t3RowLabel1 = document.getElementById('t-3-label-row-1');
-const t3RowLabel2 = document.getElementById('t-3-label-row-2');
-const t3RowLabel3 = document.getElementById('t-3-label-row-3');
-const t3RowLabel4 = document.getElementById('t-3-label-row-4');
-const t3RowLabel5 = document.getElementById('t-3-label-row-5');
-
 calcTableLowError.style.display = "none";
 calcTableLowError.style.opacity = "0";
+
+const esopElements = document.getElementsByClassName('is--ESOP-display');
+const vsopElements = document.getElementsByClassName('is--VSOP-display');
 
 option = {
     title: {
@@ -467,23 +452,12 @@ const calcData = () => {
 
 		// set rows labels
 
-		rowLabel1.textContent = 'Gross salary annually';
-		rowLabel2.textContent = 'Virtual options';
-		rowLabel3.textContent = 'as % of future company value';
-		rowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
-		rowLabel5.textContent = 'Current estimated value of options';
-
-		t2RowLabel1.textContent = 'Gross salary annually';
-		t2RowLabel2.textContent = 'Virtual options';
-		t2RowLabel3.textContent = 'as % of future company value';
-		t2RowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
-		t2RowLabel5.textContent = 'Current estimated value of options';
-
-		t3RowLabel1.textContent = 'Gross salary annually';
-		t3RowLabel2.textContent = 'Virtual options';
-		t3RowLabel3.textContent = 'as % of future company value';
-		t3RowLabel4.textContent = 'Total compensation (1st year salary + whole grant value)';
-		t3RowLabel5.textContent = 'Current estimated value of options';
+		for (var i = 0; i < esopElements.length; i++) {
+		  esopElements[i].style.display = 'none';
+		}
+		for (var j = 0; j < vsopElements.length; j++) {
+		  vsopElements[j].style.display = 'block';
+		}
 
 		// set table
 
@@ -588,23 +562,12 @@ const calcData = () => {
 	}else{
 		// set rows labels
 
-		rowLabel1.textContent = 'Gross salary annually';
-		rowLabel2.textContent = 'Company options';
-		rowLabel3.textContent = 'as % of share capital';
-		rowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
-		rowLabel5.textContent = 'Current estimated value of options';
-
-		t2RowLabel1.textContent = 'Gross salary annually';
-		t2RowLabel2.textContent = 'Company options';
-		t2RowLabel3.textContent = 'as % of share capital';
-		t2RowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
-		t2RowLabel5.textContent = 'Current estimated value of options';
-
-		t3RowLabel1.textContent = 'Gross salary annually';
-		t3RowLabel2.textContent = 'Company options';
-		t3RowLabel3.textContent = 'as % of share capital';
-		t3RowLabel4.textContent = 'Total compensation (1st year salary + whole equity value)';
-		t3RowLabel5.textContent = 'Current estimated value of options';
+		for (var i = 0; i < esopElements.length; i++) {
+		  esopElements[i].style.display = 'block';
+		}
+		for (var j = 0; j < vsopElements.length; j++) {
+		  vsopElements[j].style.display = 'none';
+		}
 		
 		// set table
 
