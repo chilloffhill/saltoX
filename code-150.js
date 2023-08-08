@@ -797,13 +797,13 @@ calculatorMessage.addEventListener("input", () => {
 });
 
 customSalaryDifference.addEventListener("input", () => {
-    calcData();
+    if (salaryDifference.value < 0 ){
+	calcData();
+    }
 });
 
 salaryDifference.onchange = function () {
-	if (salaryDifference.value < 0 ){
-		calcData();	
-	}
+    calcData();
 };
 
 checkboxError.style.display = 'none';
