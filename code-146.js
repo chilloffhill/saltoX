@@ -209,7 +209,7 @@ const calcData = () => {
 	let locJobLevelVSOP = jobLevel.value === '' ? 60 : jobLevel.value*1;
 	let maxJobLevelVSOP = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
 	
-	const locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
+	let locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
 	const locVesting = vestingPeriod.value*1;
 	let loccalCulatorMessage;
 	
