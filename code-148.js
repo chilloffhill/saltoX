@@ -800,7 +800,7 @@ customSalaryDifference.addEventListener("input", () => {
     calcData();
 });
 
-locSalaryDifference.onchange = function () {
+salaryDifference.onchange = function () {
     calcData();
 };
 
