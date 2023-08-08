@@ -59,6 +59,7 @@ const calculatorMessage = document.getElementById("calculator-message");
 const customValuation = document.getElementById("custom-valuation");
 const dropdownValuationLabel = document.getElementById("dropdown-valuation-label");
 const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label");
+const salaryDifferenceLabel = document.getElementById("salary-difference-label");
 
 const placeholder = calculatorMessage.getAttribute('placeholder');
 const formattedPlaceholder = placeholder.replace(/is__next-line/g, `
@@ -334,9 +335,9 @@ const calcData = () => {
 	}
 
 	if (salaryDifference.value === ''){
-		dropdownJobJevelJabel.style.color = '#90909D'; 
+		salaryDifferenceLabel.style.color = '#90909D'; 
 	}else{
-		dropdownJobJevelJabel.style.color = '#1F1F2D'; 
+		salaryDifferenceLabel.style.color = '#1F1F2D'; 
 	}
 
 	locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
