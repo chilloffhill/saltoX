@@ -333,6 +333,8 @@ const calcData = () => {
 		dropdownJobJevelJabel.style.color = '#1F1F2D'; 
 	}
 
+	console.log(locSalaryDifference);
+
 	locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
 
 	const numberOfShares = locShares * locCustomPoolSize/100;
@@ -793,6 +795,14 @@ cliffPeriod.onchange = function () {
 calculatorMessage.addEventListener("input", () => {
     calcData();
 });
+
+customSalaryDifference.addEventListener("input", () => {
+    calcData();
+});
+
+locSalaryDifference.onchange = function () {
+    calcData();
+};
 
 checkboxError.style.display = 'none';
 checkboxError.style.opacity = 0;
