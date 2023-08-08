@@ -333,7 +333,11 @@ const calcData = () => {
 		dropdownJobJevelJabel.style.color = '#1F1F2D'; 
 	}
 
-	console.log(locSalaryDifference);
+	if (salaryDifference.value === ''){
+		dropdownJobJevelJabel.style.color = '#90909D'; 
+	}else{
+		dropdownJobJevelJabel.style.color = '#1F1F2D'; 
+	}
 
 	locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
 
@@ -797,7 +801,7 @@ calculatorMessage.addEventListener("input", () => {
 });
 
 customSalaryDifference.addEventListener("input", () => {
-    if (salaryDifference.value < 100 ){
+    if (customSalaryDifference.value < 100 ){
 	calcData();
     }
 });
