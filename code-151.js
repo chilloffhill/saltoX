@@ -797,7 +797,7 @@ calculatorMessage.addEventListener("input", () => {
 });
 
 customSalaryDifference.addEventListener("input", () => {
-    if (salaryDifference.value < 0 ){
+    if (salaryDifference.value < 100 ){
 	calcData();
     }
 });
