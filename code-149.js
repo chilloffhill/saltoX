@@ -209,7 +209,7 @@ const calcData = () => {
 	let locJobLevelVSOP = jobLevel.value === '' ? 60 : jobLevel.value*1;
 	let maxJobLevelVSOP = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
 	
-	let locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
+	let locAnnualGrossSalary = annualGrossSalary.value === '' ? ( 60000 * locSalaryDifference ) / 100 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
 	const locVesting = vestingPeriod.value*1;
 	let loccalCulatorMessage;
 	
@@ -313,12 +313,12 @@ const calcData = () => {
 	if (salaryDifference.value === 'custom') {
 		customSalaryDifference.style.display = 'block';
 		locSalaryDifference = customSalaryDifference.value === '' ? 100 : customSalaryDifference.value.replace(/[^0-9.]/g, '')*1;
-		locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
+		locAnnualGrossSalary = annualGrossSalary.value === '' ? ( 60000 * locSalaryDifference ) / 100 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
 	} else{
 		customSalaryDifference.style.display = 'none';
 		customSalaryDifference.value = '';
 		locSalaryDifference = salaryDifference.value === '' ? 100 : salaryDifference.value*1;
-		locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
+		locAnnualGrossSalary = annualGrossSalary.value === '' ? ( 60000 * locSalaryDifference ) / 100 : ( annualGrossSalary.value.replace(/[^0-9.]/g, '') * locSalaryDifference ) / 100;
 	}
 
 	if (valuation.value === ''){
@@ -801,7 +801,9 @@ customSalaryDifference.addEventListener("input", () => {
 });
 
 salaryDifference.onchange = function () {
-    calcData();
+	if (salaryDifference.value < 0 ){
+		calcData();	
+	}
 };
 
 checkboxError.style.display = 'none';
