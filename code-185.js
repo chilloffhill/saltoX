@@ -657,7 +657,7 @@ const calcData = () => {
 				customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
 			}else{
 				salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
-				salaryDifferenceLabelOp3.style.display = 'none';
+				salaryDifferenceLabelOp3.textContent = salaryDifferenceOp3.value + '%';
 			}
 
 			return null;
