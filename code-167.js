@@ -215,7 +215,6 @@ const calcData = () => {
 	let locCustomSalaryDifferenceOp1 = customSalaryDifferenceOp1.value.replace(/[^0-9.]/g, '')*1;
 	let locCustomSalaryDifferenceOp2 = customSalaryDifferenceOp2.value.replace(/[^0-9.]/g, '')*1;
 	let locCustomSalaryDifferenceOp3 = customSalaryDifferenceOp3.value.replace(/[^0-9.]/g, '')*1;
-	console.log(locCustomSalaryDifferenceOp3)
 	
 	let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
 	const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
@@ -346,14 +345,12 @@ const calcData = () => {
 
 	if (salaryDifferenceOp3.value === 'custom') {
 		customSalaryDifferenceOp3.style.display = 'block';
-		console.log(customSalaryDifferenceOp3)
 		locSalaryDifferenceOp3 = customSalaryDifferenceOp3.value === '' ? 100 : customSalaryDifferenceOp3.value.replace(/[^0-9.]/g, '')*1;
 	} else{
 		customSalaryDifferenceOp3.style.display = 'none';
 		customSalaryDifferenceOp3.value = '';
 		locSalaryDifferenceOp3 = salaryDifferenceOp3.value === '' ? 100 : salaryDifferenceOp3.value*1;
 	}
-	console.log(locSalaryDifferenceOp3)
 
 	if (valuation.value === ''){
 		dropdownValuationLabel.style.color = '#90909D'; 
@@ -393,7 +390,6 @@ const calcData = () => {
 	let grossSalaryOp1 = ( locAnnualGrossSalary * 0.9 * locSalaryDifferenceOp1 ) / 100;
 	let grossSalaryOp2 = ( locAnnualGrossSalary  * locSalaryDifferenceOp2 ) / 100;
 	let grossSalaryOp3 = ( locAnnualGrossSalary * 1.1 * locSalaryDifferenceOp3 ) / 100;
-	console.log(locSalaryDifferenceOp3)
 
 	let grossSalaryMonthlyOp1 = grossSalaryOp1/12;
 	let grossSalaryMonthlyOp2 = grossSalaryOp2/12;
@@ -868,7 +864,7 @@ salaryDifferenceOp2.onchange = function () {
 };
 
 customSalaryDifferenceOp3.addEventListener("input", () => {
-    if (customSalaryDifferenceOp3.value < 100 ){
+    if (customSalaryDifferenceOp3.value ){
 	calcData();
     }
 });
