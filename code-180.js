@@ -637,11 +637,9 @@ const calcData = () => {
 		  vsopElements[j].style.display = 'none';
 		}
 
-		if ( companyOptions1 < 0 || companyOptions2 < 0 || companyOptions3 < 0 ){
+		const elements = document.querySelectorAll('.calculator-select-field-list-item');
 
-			const changeEvent1 = new Event('change', { bubbles: true });
-			const changeEvent2 = new Event('change', { bubbles: true });
-			const changeEvent3 = new Event('change', { bubbles: true });
+		if ( companyOptions1 < 0 || companyOptions2 < 0 || companyOptions3 < 0 ){
 			
 			if (salaryDifferenceOp1.value === 'custom') {
 				customSalaryDifferenceOp1.value = customSalaryDifferenceSavedOp1
@@ -659,6 +657,12 @@ const calcData = () => {
 				customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
 			}else{
 				salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
+				
+				elements.forEach(element => {
+				  if (element.textContent.trim() === salaryDifferenceOp3.value + '%') {
+				    element.click();
+				  }
+				});
 			}
 
 			return null;
