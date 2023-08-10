@@ -55,8 +55,16 @@ const cliffPeriod = document.getElementById("cliff-period");
 const calculatorMessage = document.getElementById("calculator-message");
 
 const salaryDifferenceOp1 = document.getElementById("salary-difference-op1");
+const salaryDifferenceOp2 = document.getElementById("salary-difference-op2");
+const salaryDifferenceOp3 = document.getElementById("salary-difference-op3");
+
 const customSalaryDifferenceOp1 = document.getElementById("custom-salary-difference-op1");
+const customSalaryDifferenceOp2 = document.getElementById("custom-salary-difference-op2");
+const customSalaryDifferenceOp3 = document.getElementById("custom-salary-difference-op3");
+
 const salaryDifferenceLabelOp1 = document.getElementById("salary-difference-label-op1");
+const salaryDifferenceLabelOp2 = document.getElementById("salary-difference-label-op2");
+const salaryDifferenceLabelOp3 = document.getElementById("salary-difference-label-op3");
 
 const customValuation = document.getElementById("custom-valuation");
 const dropdownValuationLabel = document.getElementById("dropdown-valuation-label");
@@ -201,7 +209,12 @@ option = {
 //calculation for table and line graph
 const calcData = () => {
 	let locSalaryDifferenceOp1 = salaryDifferenceOp1;
+	let locSalaryDifferenceOp2 = salaryDifferenceOp2;
+	let locSalaryDifferenceOp3 = salaryDifferenceOp3;
+	
 	let locCustomSalaryDifferenceOp1 = customSalaryDifferenceOp1.value.replace(/[^0-9.]/g, '')*1;
+	let locCustomSalaryDifferenceOp2 = customSalaryDifferenceOp2.value.replace(/[^0-9.]/g, '')*1;
+	let locCustomSalaryDifferenceOp3 = customSalaryDifferenceOp3.value.replace(/[^0-9.]/g, '')*1;
 	
 	let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
 	const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
@@ -212,7 +225,7 @@ const calcData = () => {
 	let maxJobLevelVSOP = jobLevel.value === '' ? 0.80 : jobLevel.value*1;
 	
 	let locAnnualGrossSalary = annualGrossSalary.value === '' ? 60000 : annualGrossSalary.value.replace(/[^0-9.]/g, '')*1;
-	const locVesting = vestingPeriod.value*1;
+	const locVesting = vestingPeriod.value * 1;
 	let loccalCulatorMessage;
 	
 	if (calculatorMessage.value === ''){
@@ -321,6 +334,15 @@ const calcData = () => {
 		locSalaryDifferenceOp1 = salaryDifferenceOp1.value === '' ? 100 : salaryDifferenceOp1.value*1;
 	}
 
+	if (salaryDifferenceOp2.value === 'custom') {
+		customSalaryDifferenceOp2.style.display = 'block';
+		locSalaryDifferenceOp2 = customSalaryDifferenceOp2.value === '' ? 100 : customSalaryDifferenceOp2.value.replace(/[^0-9.]/g, '')*1;
+	} else{
+		customSalaryDifferenceOp2.style.display = 'none';
+		customSalaryDifferenceOp2.value = '';
+		locSalaryDifferenceOp2 = salaryDifferenceOp2.value === '' ? 100 : salaryDifferenceOp2.value*1;
+	}
+
 	if (valuation.value === ''){
 		dropdownValuationLabel.style.color = '#90909D'; 
 	}else{
@@ -339,24 +361,30 @@ const calcData = () => {
 		salaryDifferenceLabelOp1.style.color = '#1F1F2D'; 
 	}
 
+	if (salaryDifferenceOp2.value === ''){
+		salaryDifferenceLabelOp2.style.color = '#90909D'; 
+	}else{
+		salaryDifferenceLabelOp2.style.color = '#1F1F2D'; 
+	}
+
 	locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
 
 	const numberOfShares = locShares * locCustomPoolSize/100;
 	const totalValueOfOption = ( locValuation / locShares ) * numberOfShares;
 
-	let grossSalaryOp1 = locAnnualGrossSalary*0.9;
-	let grossSalaryOp2 = ( locAnnualGrossSalary  * locSalaryDifferenceOp1 ) / 100;
+	let grossSalaryOp1 = ( locAnnualGrossSalary * 0.9 * locSalaryDifferenceOp1 ) / 100;
+	let grossSalaryOp2 = ( locAnnualGrossSalary  * locSalaryDifferenceOp2 ) / 100;
 	let grossSalaryOp3 = locAnnualGrossSalary*1.1;
 
 	let grossSalaryMonthlyOp1 = grossSalaryOp1/12;
 	let grossSalaryMonthlyOp2 = grossSalaryOp2/12;
 	let grossSalaryMonthlyOp3 = grossSalaryOp3/12;
 
-	let companyOptions2 = ( ( locAnnualGrossSalary  * locSalaryDifferenceOp1 ) / 100 * locJobLevel / 100 ) / ( totalValueOfOption / numberOfShares )
+	let companyOptions2 = ( ( locAnnualGrossSalary  * locSalaryDifferenceOp2 ) / 100 * locJobLevel / 100 ) / ( totalValueOfOption / numberOfShares )
 	let companyOptions3 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*1.1 ) * 4 ) / ( totalValueOfOption / numberOfShares );
-	let companyOptions1 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*0.9 ) * 4 ) / ( totalValueOfOption / numberOfShares );
+	let companyOptions1 = ( ( ( ( locAnnualGrossSalary * locSalaryDifferenceOp1 ) / 100 + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*0.9 ) * 4 ) / ( totalValueOfOption / numberOfShares );
 
-	const EquityValueBasedOnSalary = ( ( locAnnualGrossSalary * locSalaryDifferenceOp1 ) / 100 * locJobLevel ) / 100;
+	const EquityValueBasedOnSalary = ( ( locAnnualGrossSalary * locSalaryDifferenceOp2 ) / 100 * locJobLevel ) / 100;
 	const EquityBasedOnSalary = EquityValueBasedOnSalary / locValuation;
 	locJobLevel = ( EquityBasedOnSalary * 100 ) < maxJobLevel ? ( EquityBasedOnSalary * 100 ) : maxJobLevel;
 
@@ -366,8 +394,8 @@ const calcData = () => {
 	const AnnualSalaryLoss1 = ( AnnualSalaryLossVal1 / locValuation ) *100;
 	const AnnualSalaryLoss3 = - ( AnnualSalaryLossVal3 / locValuation ) *100;
 
-	const totalAnnualComp2 = ( locAnnualGrossSalary * locSalaryDifferenceOp1 ) / 100 + ( ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4 )
-	const totalAnnualComp1 = locAnnualGrossSalary*0.9 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
+	const totalAnnualComp2 = ( locAnnualGrossSalary * locSalaryDifferenceOp2 ) / 100 + ( ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4 )
+	const totalAnnualComp1 = ( locAnnualGrossSalary * 0.9 * locSalaryDifferenceOp1 ) / 100 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
 	const totalAnnualComp3 = locAnnualGrossSalary*1.1 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*1.1 ) * 4 ) / 4 )
 
 	const shareCapitalOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? ( locJobLevel + AnnualSalaryLoss1 ) : locJobLevel;
@@ -392,8 +420,8 @@ const calcData = () => {
 
 	//VSOP
 
-	let grossSalaryVSOPOp1 = locAnnualGrossSalary*0.9;
-	let grossSalaryVSOPOp2 = ( locAnnualGrossSalary * locSalaryDifferenceOp1 ) / 100;
+	let grossSalaryVSOPOp1 = ( locAnnualGrossSalary*0.9 * locSalaryDifferenceOp1 ) / 100;
+	let grossSalaryVSOPOp2 = ( locAnnualGrossSalary * locSalaryDifferenceOp2 ) / 100;
 	let grossSalaryVSOPOp3 = locAnnualGrossSalary*1.1;
 
 	let grossSalaryMonthlyVSOPOp1 = grossSalaryOp1/12;
@@ -810,11 +838,24 @@ salaryDifferenceOp1.onchange = function () {
     calcData();
 };
 
+customSalaryDifferenceOp2.addEventListener("input", () => {
+    if (customSalaryDifferenceOp2.value < 100 ){
+	calcData();
+    }
+});
+
+salaryDifferenceOp2.onchange = function () {
+    calcData();
+};
+
 checkboxError.style.display = 'none';
 checkboxError.style.opacity = 0;
 allowOnlyNumbers(shares);
 allowOnlyNumbers(annualGrossSalary);
 formatNumberInput(customPoolSize);
+
 formatNumberInput(customSalaryDifferenceOp1);
+formatNumberInput(customSalaryDifferenceOp2);
+
 allowOnlyNumbers(customValuation);
 calcData();
