@@ -638,23 +638,28 @@ const calcData = () => {
 		}
 
 		if ( companyOptions1 < 0 || companyOptions2 < 0 || companyOptions3 < 0 ){
+
+			const changeEvent = new Event('change', { bubbles: true });
 			
 			if (salaryDifferenceOp1.value === 'custom') {
 				customSalaryDifferenceOp1.value = customSalaryDifferenceSavedOp1
 			}else{
 				salaryDifferenceOp1.value  = salaryDifferenceSavedOp1;	
+				salaryDifferenceOp1.dispatchEvent(changeEvent);
 			}
 			
 			if (salaryDifferenceOp2.value === 'custom') {
 				customSalaryDifferenceOp2.value = customSalaryDifferenceSavedOp2
 			}else{
 				salaryDifferenceOp2.value  = salaryDifferenceSavedOp2;
+				salaryDifferenceOp2.dispatchEvent(changeEvent);
 			}
 			
 			if (salaryDifferenceOp3.value === 'custom') {
 				customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
 			}else{
 				salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
+				salaryDifferenceOp3.dispatchEvent(changeEvent);
 			}
 
 			return null;
