@@ -343,6 +343,15 @@ const calcData = () => {
 		locSalaryDifferenceOp2 = salaryDifferenceOp2.value === '' ? 100 : salaryDifferenceOp2.value*1;
 	}
 
+	if (salaryDifferenceOp3.value === 'custom') {
+		customSalaryDifferenceOp3.style.display = 'block';
+		locSalaryDifferenceOp3 = customSalaryDifferenceOp3.value === '' ? 100 : customSalaryDifferenceOp3.value.replace(/[^0-9.]/g, '')*1;
+	} else{
+		customSalaryDifferenceOp3.style.display = 'none';
+		customSalaryDifferenceOp3.value = '';
+		locSalaryDifferenceOp3 = salaryDifferenceOp3.value === '' ? 100 : salaryDifferenceOp3.value*1;
+	}
+
 	if (valuation.value === ''){
 		dropdownValuationLabel.style.color = '#90909D'; 
 	}else{
@@ -367,6 +376,12 @@ const calcData = () => {
 		salaryDifferenceLabelOp2.style.color = '#1F1F2D'; 
 	}
 
+	if (salaryDifferenceOp3.value === ''){
+		salaryDifferenceLabelOp2.style.color = '#90909D'; 
+	}else{
+		salaryDifferenceLabelOp2.style.color = '#1F1F2D'; 
+	}
+
 	locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
 
 	const numberOfShares = locShares * locCustomPoolSize/100;
@@ -374,14 +389,14 @@ const calcData = () => {
 
 	let grossSalaryOp1 = ( locAnnualGrossSalary * 0.9 * locSalaryDifferenceOp1 ) / 100;
 	let grossSalaryOp2 = ( locAnnualGrossSalary  * locSalaryDifferenceOp2 ) / 100;
-	let grossSalaryOp3 = locAnnualGrossSalary*1.1;
+	let grossSalaryOp3 = ( locAnnualGrossSalary * 1.1 * locSalaryDifferenceOp3 ) / 100;
 
 	let grossSalaryMonthlyOp1 = grossSalaryOp1/12;
 	let grossSalaryMonthlyOp2 = grossSalaryOp2/12;
 	let grossSalaryMonthlyOp3 = grossSalaryOp3/12;
 
 	let companyOptions2 = ( ( locAnnualGrossSalary  * locSalaryDifferenceOp2 ) / 100 * locJobLevel / 100 ) / ( totalValueOfOption / numberOfShares )
-	let companyOptions3 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*1.1 ) * 4 ) / ( totalValueOfOption / numberOfShares );
+	let companyOptions3 = ( ( ( ( locAnnualGrossSalary * locSalaryDifferenceOp3 ) / 100 + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*1.1 ) * 4 ) / ( totalValueOfOption / numberOfShares );
 	let companyOptions1 = ( ( ( ( locAnnualGrossSalary * locSalaryDifferenceOp1 ) / 100 + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - locAnnualGrossSalary*0.9 ) * 4 ) / ( totalValueOfOption / numberOfShares );
 
 	const EquityValueBasedOnSalary = ( ( locAnnualGrossSalary * locSalaryDifferenceOp2 ) / 100 * locJobLevel ) / 100;
@@ -396,7 +411,7 @@ const calcData = () => {
 
 	const totalAnnualComp2 = ( locAnnualGrossSalary * locSalaryDifferenceOp2 ) / 100 + ( ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4 )
 	const totalAnnualComp1 = ( locAnnualGrossSalary * 0.9 * locSalaryDifferenceOp1 ) / 100 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*0.9 ) * 4 ) / 4 )
-	const totalAnnualComp3 = locAnnualGrossSalary*1.1 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*1.1 ) * 4 ) / 4 )
+	const totalAnnualComp3 = ( locAnnualGrossSalary * 1.1 * locSalaryDifferenceOp3 ) / 100 + ( ( ( totalAnnualComp2 - locAnnualGrossSalary*1.1 ) * 4 ) / 4 )
 
 	const shareCapitalOp1 = ( ( locJobLevel + AnnualSalaryLoss3 ) >= 0 ) ? ( locJobLevel + AnnualSalaryLoss1 ) : locJobLevel;
 	const shareCapitalOp2 = locJobLevel;
@@ -420,9 +435,9 @@ const calcData = () => {
 
 	//VSOP
 
-	let grossSalaryVSOPOp1 = ( locAnnualGrossSalary*0.9 * locSalaryDifferenceOp1 ) / 100;
+	let grossSalaryVSOPOp1 = ( locAnnualGrossSalary * 0.9 * locSalaryDifferenceOp1 ) / 100;
 	let grossSalaryVSOPOp2 = ( locAnnualGrossSalary * locSalaryDifferenceOp2 ) / 100;
-	let grossSalaryVSOPOp3 = locAnnualGrossSalary*1.1;
+	let grossSalaryVSOPOp3 = ( locAnnualGrossSalary * 1.1 * locSalaryDifferenceOp3 ) / 100;
 
 	let grossSalaryMonthlyVSOPOp1 = grossSalaryOp1/12;
 	let grossSalaryMonthlyVSOPOp2 = grossSalaryOp2/12;
@@ -848,6 +863,16 @@ salaryDifferenceOp2.onchange = function () {
     calcData();
 };
 
+customSalaryDifferenceOp3.addEventListener("input", () => {
+    if (customSalaryDifferenceOp3.value < 100 ){
+	calcData();
+    }
+});
+
+salaryDifferenceOp3.onchange = function () {
+    calcData();
+};
+
 checkboxError.style.display = 'none';
 checkboxError.style.opacity = 0;
 allowOnlyNumbers(shares);
@@ -856,6 +881,7 @@ formatNumberInput(customPoolSize);
 
 formatNumberInput(customSalaryDifferenceOp1);
 formatNumberInput(customSalaryDifferenceOp2);
+formatNumberInput(customSalaryDifferenceOp3);
 
 allowOnlyNumbers(customValuation);
 calcData();
