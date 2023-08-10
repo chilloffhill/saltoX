@@ -211,7 +211,6 @@ const calcData = () => {
 	let locSalaryDifferenceOp1 = salaryDifferenceOp1;
 	let locSalaryDifferenceOp2 = salaryDifferenceOp2;
 	let locSalaryDifferenceOp3 = salaryDifferenceOp3;
-	console.log(locSalaryDifferenceOp3)
 	
 	let locCustomSalaryDifferenceOp1 = customSalaryDifferenceOp1.value.replace(/[^0-9.]/g, '')*1;
 	let locCustomSalaryDifferenceOp2 = customSalaryDifferenceOp2.value.replace(/[^0-9.]/g, '')*1;
@@ -346,6 +345,7 @@ const calcData = () => {
 
 	if (salaryDifferenceOp3.value === 'custom') {
 		customSalaryDifferenceOp3.style.display = 'block';
+		console.log(customSalaryDifferenceOp3)
 		locSalaryDifferenceOp3 = customSalaryDifferenceOp3.value === '' ? 100 : customSalaryDifferenceOp3.value.replace(/[^0-9.]/g, '')*1;
 	} else{
 		customSalaryDifferenceOp3.style.display = 'none';
@@ -884,7 +884,7 @@ formatNumberInput(customPoolSize, 2);
 
 formatNumberInput(customSalaryDifferenceOp1, 2);
 formatNumberInput(customSalaryDifferenceOp2, 2);
-formatNumberInput(customSalaryDifferenceOp3, 4);
+allowOnlyNumbers(customSalaryDifferenceOp3);
 
 allowOnlyNumbers(customValuation);
 calcData();
