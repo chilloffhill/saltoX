@@ -881,7 +881,7 @@ formatNumberInput(customPoolSize);
 
 formatNumberInput(customSalaryDifferenceOp1);
 formatNumberInput(customSalaryDifferenceOp2);
-formatNumberInput(customSalaryDifferenceOp3);
+allowOnlyNumbers(customSalaryDifferenceOp3);
 
 allowOnlyNumbers(customValuation);
 calcData();
