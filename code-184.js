@@ -657,7 +657,7 @@ const calcData = () => {
 				customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
 			}else{
 				salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
-				salaryDifferenceLabelOp3.textContent = salaryDifferenceOp3.value + '%';
+				salaryDifferenceLabelOp3.style.display = 'none';
 			}
 
 			return null;
@@ -669,6 +669,8 @@ const calcData = () => {
 			customSalaryDifferenceSavedOp1 = locCustomSalaryDifferenceOp1
 			customSalaryDifferenceSavedOp2 = locCustomSalaryDifferenceOp2
 			customSalaryDifferenceSavedOp3 = locCustomSalaryDifferenceOp3
+
+			salaryDifferenceLabelOp3.style.display = 'flex';
 		}
 		
 		// set table
