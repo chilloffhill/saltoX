@@ -377,9 +377,9 @@ const calcData = () => {
 	}
 
 	if (salaryDifferenceOp3.value === ''){
-		salaryDifferenceLabelOp2.style.color = '#90909D'; 
+		salaryDifferenceLabelOp3.style.color = '#90909D'; 
 	}else{
-		salaryDifferenceLabelOp2.style.color = '#1F1F2D'; 
+		salaryDifferenceLabelOp3.style.color = '#1F1F2D'; 
 	}
 
 	locCustomPoolSize = locCustomPoolSize == '' ? 20 : locCustomPoolSize;
