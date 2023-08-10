@@ -637,7 +637,7 @@ const calcData = () => {
 		  vsopElements[j].style.display = 'none';
 		}
 
-		const elements = document.querySelectorAll('.calculator-select-field-list-item');
+		const elements = document.querySelectorAll('[aria-selected]');
 
 		if ( companyOptions1 < 0 || companyOptions2 < 0 || companyOptions3 < 0 ){
 			
@@ -657,11 +657,13 @@ const calcData = () => {
 				customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
 			}else{
 				salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
-				
+
 				elements.forEach(element => {
-				  if (element.textContent.trim() === salaryDifferenceOp3.value + '%') {
-				    element.click();
-				  }
+				    if (element.textContent.trim() === '100%') {
+				        element.setAttribute('aria-selected', 'true');
+				    } else {
+				        element.setAttribute('aria-selected', 'false');
+				    }
 				});
 			}
 
