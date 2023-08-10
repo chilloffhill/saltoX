@@ -637,7 +637,7 @@ const calcData = () => {
 		  vsopElements[j].style.display = 'none';
 		}
 
-		if ( companyOptions1 < 0 ) || ( companyOptions2 < 0 ) || ( companyOptions3 < 0 ){
+		if ( companyOptions1 < 0 || companyOptions2 < 0 || companyOptions3 < 0 ){
 			salaryDifferenceOp1.value  = salaryDifferenceSavedOp1;
 			salaryDifferenceOp2.value  = salaryDifferenceSavedOp2;
 			salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
