@@ -300,11 +300,15 @@ let maxJobLevelVSOP;
 let numberOfShares;
 let totalValueOfOption;
 
+let locSalaryDifferenceOp1;
+let locSalaryDifferenceOp2;
+let locSalaryDifferenceOp3;
+
 //calculation for table and line graph
 const calcData = () => {
-	let locSalaryDifferenceOp1 = salaryDifferenceOp1;
-	let locSalaryDifferenceOp2 = salaryDifferenceOp2;
-	let locSalaryDifferenceOp3 = salaryDifferenceOp3;
+	locSalaryDifferenceOp1 = salaryDifferenceOp1;
+	locSalaryDifferenceOp2 = salaryDifferenceOp2;
+	locSalaryDifferenceOp3 = salaryDifferenceOp3;
 	
 	let locCustomSalaryDifferenceOp1 = customSalaryDifferenceOp1.value.replace(/[^0-9.]/g, '')*1;
 	let locCustomSalaryDifferenceOp2 = customSalaryDifferenceOp2.value.replace(/[^0-9.]/g, '')*1;
