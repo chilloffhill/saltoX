@@ -528,6 +528,9 @@ const calcData = () => {
 		setCellValue("company-options-op-1", Math.floor(VSOPSharesOp1 < 0 ? 0 : VSOPSharesOp1));
 		setCellValue("company-options-op-2", Math.floor(VSOPSharesOp2 < 0 ? 0 : VSOPSharesOp2));
 		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp3 < 0 ? 0 : VSOPSharesOp3));
+		console.log(VSOPSharesOp1)
+		console.log(VSOPSharesOp2)
+		console.log(VSOPSharesOp3)
 	
 		setCellValue("value-of-options-op-1", '€' + Math.floor(annualCompensationVSOPop1));
 		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop2));
@@ -638,6 +641,9 @@ const calcData = () => {
 		setCellValue("company-options-op-1", Math.round(companyOptions1 < 0 ? 0 : companyOptions1));
 		setCellValue("company-options-op-2", Math.round(companyOptions2 < 0 ? 0 : companyOptions2));
 		setCellValue("company-options-op-3", Math.round(companyOptions3 < 0 ? 0 : companyOptions3));
+		console.log(companyOptions1)
+		console.log(companyOptions2)
+		console.log(companyOptions3)
 	
 		setCellValue("value-of-options-op-1", '€' + Math.round(valueOfOptions1));
 		setCellValue("value-of-options-op-2", '€' + Math.round(valueOfOptions2));
