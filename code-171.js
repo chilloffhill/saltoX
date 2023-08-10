@@ -66,6 +66,14 @@ const salaryDifferenceLabelOp1 = document.getElementById("salary-difference-labe
 const salaryDifferenceLabelOp2 = document.getElementById("salary-difference-label-op2");
 const salaryDifferenceLabelOp3 = document.getElementById("salary-difference-label-op3");
 
+let salaryDifferenceSavedOp1 = salaryDifferenceOp1.value;
+let salaryDifferenceSavedOp2 = salaryDifferenceOp2.value;
+let salaryDifferenceSavedOp3 = salaryDifferenceOp3.value;
+
+let customSalaryDifferenceSavedOp1 = customSalaryDifferenceOp1.value;
+let customSalaryDifferenceSavedOp2 = customSalaryDifferenceOp2.value;
+let customSalaryDifferenceSavedOp3 = customSalaryDifferenceOp3.value;
+
 const customValuation = document.getElementById("custom-valuation");
 const dropdownValuationLabel = document.getElementById("dropdown-valuation-label");
 const dropdownJobJevelJabel = document.getElementById("dropdown-job-level-label");
@@ -525,12 +533,9 @@ const calcData = () => {
 		setCellValue("gross-salary-op-2", '€' + Math.floor(grantValueVSOPop2));
 		setCellValue("gross-salary-op-3", '€' + Math.floor(grantValueVSOPop3));
 	
-		setCellValue("company-options-op-1", Math.floor(VSOPSharesOp1 < 0 ? 0 : VSOPSharesOp1));
-		setCellValue("company-options-op-2", Math.floor(VSOPSharesOp2 < 0 ? 0 : VSOPSharesOp2));
-		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp3 < 0 ? 0 : VSOPSharesOp3));
-		console.log(VSOPSharesOp1)
-		console.log(VSOPSharesOp2)
-		console.log(VSOPSharesOp3)
+		setCellValue("company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("value-of-options-op-1", '€' + Math.floor(annualCompensationVSOPop1));
 		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop2));
@@ -550,9 +555,9 @@ const calcData = () => {
 		setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
 		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
 	
-		setCellValue("t-2-company-options-op-1", Math.floor(VSOPSharesOp1 < 0 ? 0 : VSOPSharesOp1));
-		setCellValue("t-2-company-options-op-2", Math.floor(VSOPSharesOp2 < 0 ? 0 : VSOPSharesOp2));
-		setCellValue("t-2-company-options-op-3", Math.floor(VSOPSharesOp3 < 0 ? 0 : VSOPSharesOp3));
+		setCellValue("t-2-company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("t-2-company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("t-2-company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
@@ -572,9 +577,9 @@ const calcData = () => {
 		setCellValue("t-3-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
 		setCellValue("t-3-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
 	
-		setCellValue("t-3-company-options-op-1", Math.floor(VSOPSharesOp1 < 0 ? 0 : VSOPSharesOp1));
-		setCellValue("t-3-company-options-op-2", Math.floor(VSOPSharesOp2 < 0 ? 0 : VSOPSharesOp2));
-		setCellValue("t-3-company-options-op-3", Math.floor(VSOPSharesOp3 < 0 ? 0 : VSOPSharesOp3));
+		setCellValue("t-3-company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("t-3-company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("t-3-company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("t-3-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
@@ -631,6 +636,25 @@ const calcData = () => {
 		for (var j = 0; j < vsopElements.length; j++) {
 		  vsopElements[j].style.display = 'none';
 		}
+
+		if ( companyOptions1 < 0 ) || ( companyOptions2 < 0 ) || ( companyOptions3 < 0 ){
+			salaryDifferenceOp1.value  = salaryDifferenceSavedOp1;
+			salaryDifferenceOp2.value  = salaryDifferenceSavedOp2;
+			salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
+
+			customSalaryDifferenceOp1.value = customSalaryDifferenceSavedOp1
+			customSalaryDifferenceOp2.value = customSalaryDifferenceSavedOp2
+			customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
+			return null;
+		}else{
+			salaryDifferenceSavedOp1 = locSalaryDifferenceOp1
+			salaryDifferenceSavedOp2 = locSalaryDifferenceOp2
+			salaryDifferenceSavedOp3 = locSalaryDifferenceOp3
+
+			customSalaryDifferenceSavedOp1 = locCustomSalaryDifferenceOp1
+			customSalaryDifferenceSavedOp2 = locCustomSalaryDifferenceOp2
+			customSalaryDifferenceSavedOp3 = locCustomSalaryDifferenceOp3
+		}
 		
 		// set table
 
@@ -638,12 +662,9 @@ const calcData = () => {
 		setCellValue("gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
 		setCellValue("gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
 	
-		setCellValue("company-options-op-1", Math.round(companyOptions1 < 0 ? 0 : companyOptions1));
-		setCellValue("company-options-op-2", Math.round(companyOptions2 < 0 ? 0 : companyOptions2));
-		setCellValue("company-options-op-3", Math.round(companyOptions3 < 0 ? 0 : companyOptions3));
-		console.log(companyOptions1)
-		console.log(companyOptions2)
-		console.log(companyOptions3)
+		setCellValue("company-options-op-1", Math.round(companyOptions1));
+		setCellValue("company-options-op-2", Math.round(companyOptions2));
+		setCellValue("company-options-op-3", Math.round(companyOptions3));
 	
 		setCellValue("value-of-options-op-1", '€' + Math.round(valueOfOptions1));
 		setCellValue("value-of-options-op-2", '€' + Math.round(valueOfOptions2));
@@ -663,9 +684,9 @@ const calcData = () => {
 		setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
 		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
 	
-		setCellValue("t-2-company-options-op-1", Math.round(companyOptions1 < 0 ? 0 : companyOptions1));
-		setCellValue("t-2-company-options-op-2", Math.round(companyOptions2 < 0 ? 0 : companyOptions2));
-		setCellValue("t-2-company-options-op-3", Math.round(companyOptions3 < 0 ? 0 : companyOptions3));
+		setCellValue("t-2-company-options-op-1", Math.round(companyOptions1));
+		setCellValue("t-2-company-options-op-2", Math.round(companyOptions2));
+		setCellValue("t-2-company-options-op-3", Math.round(companyOptions3));
 	
 		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(valueOfOptions1));
 		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(valueOfOptions2));
@@ -685,9 +706,9 @@ const calcData = () => {
 		setCellValue("t-3-gross-salary-op-2", '€' + Math.round(grossSalaryOp2));
 		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grossSalaryOp3));
 	
-		setCellValue("t-3-company-options-op-1", Math.round(companyOptions1 < 0 ? 0 : companyOptions1));
-		setCellValue("t-3-company-options-op-2", Math.round(companyOptions2 < 0 ? 0 : companyOptions2));
-		setCellValue("t-3-company-options-op-3", Math.round(companyOptions3 < 0 ? 0 : companyOptions3));
+		setCellValue("t-3-company-options-op-1", Math.round(companyOptions1));
+		setCellValue("t-3-company-options-op-2", Math.round(companyOptions2));
+		setCellValue("t-3-company-options-op-3", Math.round(companyOptions3));
 	
 		setCellValue("t-3-value-of-options-op-1", '€' + Math.round(valueOfOptions1));
 		setCellValue("t-3-value-of-options-op-2", '€' + Math.round(valueOfOptions2));
