@@ -639,27 +639,29 @@ const calcData = () => {
 
 		if ( companyOptions1 < 0 || companyOptions2 < 0 || companyOptions3 < 0 ){
 
-			const changeEvent = new Event('change', { bubbles: true });
+			const changeEvent1 = new Event('change', { bubbles: true });
+			const changeEvent2 = new Event('change', { bubbles: true });
+			const changeEvent3 = new Event('change', { bubbles: true });
 			
 			if (salaryDifferenceOp1.value === 'custom') {
 				customSalaryDifferenceOp1.value = customSalaryDifferenceSavedOp1
 			}else{
 				salaryDifferenceOp1.value  = salaryDifferenceSavedOp1;	
-				salaryDifferenceOp1.dispatchEvent(changeEvent);
+				salaryDifferenceOp1.dispatchEvent(changeEvent1);
 			}
 			
 			if (salaryDifferenceOp2.value === 'custom') {
 				customSalaryDifferenceOp2.value = customSalaryDifferenceSavedOp2
 			}else{
 				salaryDifferenceOp2.value  = salaryDifferenceSavedOp2;
-				salaryDifferenceOp2.dispatchEvent(changeEvent);
+				salaryDifferenceOp2.dispatchEvent(changeEvent2);
 			}
 			
 			if (salaryDifferenceOp3.value === 'custom') {
 				customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
 			}else{
 				salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
-				salaryDifferenceOp3.dispatchEvent(changeEvent);
+				salaryDifferenceOp3.dispatchEvent(changeEvent3);
 			}
 
 			return null;
