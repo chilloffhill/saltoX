@@ -351,6 +351,7 @@ const calcData = () => {
 		customSalaryDifferenceOp3.value = '';
 		locSalaryDifferenceOp3 = salaryDifferenceOp3.value === '' ? 100 : salaryDifferenceOp3.value*1;
 	}
+	console.log(locSalaryDifferenceOp3)
 
 	if (valuation.value === ''){
 		dropdownValuationLabel.style.color = '#90909D'; 
@@ -390,6 +391,7 @@ const calcData = () => {
 	let grossSalaryOp1 = ( locAnnualGrossSalary * 0.9 * locSalaryDifferenceOp1 ) / 100;
 	let grossSalaryOp2 = ( locAnnualGrossSalary  * locSalaryDifferenceOp2 ) / 100;
 	let grossSalaryOp3 = ( locAnnualGrossSalary * 1.1 * locSalaryDifferenceOp3 ) / 100;
+	console.log(locSalaryDifferenceOp3)
 
 	let grossSalaryMonthlyOp1 = grossSalaryOp1/12;
 	let grossSalaryMonthlyOp2 = grossSalaryOp2/12;
