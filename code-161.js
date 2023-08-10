@@ -14,21 +14,21 @@ function allowOnlyNumbers(inputElement) {
     });
 }
 
-function formatNumberInput(inputElement) {
+function formatNumberInput(inputElement, number) {
     inputElement.addEventListener('input', () => {
         let val = inputElement.value.replace(/[^0-9.]/g, '');
         
         const decimalIndex = val.indexOf('.');
         if (decimalIndex !== -1) {
             const integerPart = val.slice(0, decimalIndex);
-            const limitedIntegerPart = integerPart.slice(0, 2);
+            const limitedIntegerPart = integerPart.slice(0, number);
             
             const decimalPart = val.slice(decimalIndex + 1);
-            const limitedDecimalPart = decimalPart.slice(0, 2);
+            const limitedDecimalPart = decimalPart.slice(0, number);
             
             val = `${limitedIntegerPart}.${limitedDecimalPart}`;
         } else {
-            val = val.slice(0, 2);
+            val = val.slice(0, number);
         }
         
         inputElement.value = val;
@@ -525,9 +525,9 @@ const calcData = () => {
 		setCellValue("gross-salary-op-2", '€' + Math.floor(grantValueVSOPop2));
 		setCellValue("gross-salary-op-3", '€' + Math.floor(grantValueVSOPop3));
 	
-		setCellValue("company-options-op-1", Math.floor(VSOPSharesOp1 < 0 ? 0 : VSOPSharesOp1));
-		setCellValue("company-options-op-2", Math.floor(VSOPSharesOp2 < 0 ? 0 : VSOPSharesOp2));
-		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp3 < 0 ? 0 : VSOPSharesOp3));
+		setCellValue("company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("value-of-options-op-1", '€' + Math.floor(annualCompensationVSOPop1));
 		setCellValue("value-of-options-op-2", '€' + Math.floor(annualCompensationVSOPop2));
@@ -547,9 +547,9 @@ const calcData = () => {
 		setCellValue("t-2-gross-salary-op-2", '€' + Math.round(grantValueVSOPop2));
 		setCellValue("t-2-gross-salary-op-3", '€' + Math.round(grantValueVSOPop3));
 	
-		setCellValue("t-2-company-options-op-1", Math.floor(VSOPSharesOp1 < 0 ? 0 : VSOPSharesOp1));
-		setCellValue("t-2-company-options-op-2", Math.floor(VSOPSharesOp2 < 0 ? 0 : VSOPSharesOp2));
-		setCellValue("t-2-company-options-op-3", Math.floor(VSOPSharesOp3 < 0 ? 0 : VSOPSharesOp3));
+		setCellValue("t-2-company-options-op-1", Math.floor(VSOPSharesOp1));
+		setCellValue("t-2-company-options-op-2", Math.floor(VSOPSharesOp2));
+		setCellValue("t-2-company-options-op-3", Math.floor(VSOPSharesOp3));
 	
 		setCellValue("t-2-value-of-options-op-1", '€' + Math.round(annualCompensationVSOPop1));
 		setCellValue("t-2-value-of-options-op-2", '€' + Math.round(annualCompensationVSOPop2));
@@ -877,11 +877,11 @@ checkboxError.style.display = 'none';
 checkboxError.style.opacity = 0;
 allowOnlyNumbers(shares);
 allowOnlyNumbers(annualGrossSalary);
-formatNumberInput(customPoolSize);
+formatNumberInput(customPoolSize, 2);
 
-formatNumberInput(customSalaryDifferenceOp1);
-formatNumberInput(customSalaryDifferenceOp2);
-allowOnlyNumbers(customSalaryDifferenceOp3);
+formatNumberInput(customSalaryDifferenceOp1, 2);
+formatNumberInput(customSalaryDifferenceOp2, 2);
+formatNumberInput(customSalaryDifferenceOp3, 4);
 
 allowOnlyNumbers(customValuation);
 calcData();
