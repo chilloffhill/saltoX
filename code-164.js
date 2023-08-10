@@ -215,6 +215,7 @@ const calcData = () => {
 	let locCustomSalaryDifferenceOp1 = customSalaryDifferenceOp1.value.replace(/[^0-9.]/g, '')*1;
 	let locCustomSalaryDifferenceOp2 = customSalaryDifferenceOp2.value.replace(/[^0-9.]/g, '')*1;
 	let locCustomSalaryDifferenceOp3 = customSalaryDifferenceOp3.value.replace(/[^0-9.]/g, '')*1;
+	console.log(locCustomSalaryDifferenceOp3)
 	
 	let locCustomPoolSize = customPoolSize.value.replace(/[^0-9.]/g, '')*1;
 	const locShares = shares.value === '' ? 1000000 : shares.value.replace(/[^0-9.]/g, '')*1;
