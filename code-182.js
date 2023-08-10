@@ -657,14 +657,7 @@ const calcData = () => {
 				customSalaryDifferenceOp3.value = customSalaryDifferenceSavedOp3
 			}else{
 				salaryDifferenceOp3.value  = salaryDifferenceSavedOp3;
-
-				elements.forEach(element => {
-				    if (element.textContent.trim() === '100%') {
-				        element.setAttribute('aria-selected', 'true');
-				    } else {
-				        element.setAttribute('aria-selected', 'false');
-				    }
-				});
+				salaryDifferenceLabelOp3.textContent = salaryDifferenceSavedOp3 + '%';
 			}
 
 			return null;
