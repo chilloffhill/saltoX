@@ -926,6 +926,15 @@ salaryDifferenceOp1.addEventListener('change', function(event) {
 	}
 });
 
+document.getElementById('test').addEventListener('click', function(event) {
+    setJobLevel();
+    let companyOptions2 = ( ( locAnnualGrossSalary  * locSalaryDifferenceOp2 ) / 100 * locJobLevel / 100 ) / ( totalValueOfOption / numberOfShares )
+    let companyOptions1 = ( ( ( locAnnualGrossSalary + ( companyOptions2 * ( totalValueOfOption / numberOfShares ) ) / 4) - ( locAnnualGrossSalary * locSalaryDifferenceOp1 ) / 100 ) * 4 ) / ( totalValueOfOption / numberOfShares );
+	if (companyOptions1 < 0){
+		event.preventDefault();
+	}
+});
+
 customSalaryDifferenceOp2.addEventListener("input", () => {
     if (customSalaryDifferenceOp2.value < 100 ){
 	calcData();
