@@ -538,7 +538,7 @@ const calcData = () => {
             salaryDifferenceSubLabelOp1.textContent = 'Custom'
         }else{
             if (salaryDifferenceSavedOp1 === ''){
-                salaryDifferenceSubLabelOp1.textContent = 'Select';
+                salaryDifferenceSubLabelOp1.textContent = '90%';
                 salaryDifferenceSubLabelOp1.style.color = 'rgb(144, 144, 157)';
             }else{
                 salaryDifferenceSubLabelOp1.textContent = salaryDifferenceSavedOp1 + "%";
@@ -576,7 +576,7 @@ const calcData = () => {
             salaryDifferenceSubLabelOp3.textContent = 'Custom'
         }else{
             if (salaryDifferenceSavedOp3 === ''){
-                salaryDifferenceSubLabelOp3.textContent = 'Select';
+                salaryDifferenceSubLabelOp3.textContent = '110%';
                 salaryDifferenceSubLabelOp3.style.color = 'rgb(144, 144, 157)';
             }else{
                 salaryDifferenceSubLabelOp3.textContent = salaryDifferenceSavedOp3 + "%";
